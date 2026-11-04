@@ -1,0 +1,12 @@
+query,read_rows,read_bytes,peak_memory_bytes
+b1_india_station_years.raw.sql,61736636,613947190,39934687
+b1_india_station_years.rollup.sql,204800,3459241,42865728
+b2_india_filter_no_index.raw.sql,1074089837,2610625302,56711522
+b3_one_station_history.raw.sql,516160,3699200,2933133
+b3_one_station_history.rollup.sql,32768,173122,2727806
+b4_country_decade_scan.raw.sql,1074089837,10703621362,7913356
+b4_country_decade_scan.rollup.sql,3267574,75434620,6163943
+b5_q6_country_rates.raw.sql,947543294,12550180143,1638270067
+b5_q6_country_rates.rollup.sql,17971574,520779997,1632964939
+b6_q6_rewritten.raw.sql,473771647,6503540118,1632581789
+b6_q6_rewritten.rollup.sql,8985787,260176361,407998735

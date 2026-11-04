@@ -1,0 +1,133 @@
+station_id,share_1982-88,share_1989-2000,share_2001-10,share_2011-15,share_2016-19,repeat_group,name,state,lat,lon,station_class,group_label
+IN001020700,3.4,3.7,4.2,29.2,4.6,jumped,Anantapur,Andhra Pradesh,14.583,77.633,plains,Stepped at 2011
+IN001050200,2.9,4.1,5.8,31.1,7.3,jumped,Kakinada,Andhra Pradesh,16.95,82.233,coastal,Stepped at 2011
+IN001080500,3.0,3.9,3.5,23.6,5.1,jumped,Hyderabad,Andhra Pradesh,17.45,78.47,plains,Stepped at 2011
+IN001090500,1.8,3.1,5.7,31.6,7.5,jumped,Ramgundam,Andhra Pradesh,18.767,79.433,plains,Stepped at 2011
+IN001111200,3.8,4.6,5.7,30.3,30.6,jumped,Machilipatnam,Andhra Pradesh,16.2,81.15,coastal,Stepped at 2011
+IN001111600,,,,6.3,6.4,unknown,Vijayawada,Andhra Pradesh,16.533,80.8,plains,Too little data
+IN001120100,3.4,3.1,4.9,29.9,5.2,jumped,Kurnool,Andhra Pradesh,15.8,78.067,plains,Stepped at 2011
+IN001160200,2.9,3.6,4.7,29.3,6.9,jumped,Nellore,Andhra Pradesh,14.45,79.983,coastal,Stepped at 2011
+IN001170800,,,,,28.4,unknown,Nizamabad,Andhra Pradesh,18.667,78.1,plains,Too little data
+IN001190700,,,,4.0,29.8,unknown,Kalingapatam,Andhra Pradesh,18.333,84.133,coastal,Too little data
+IN001200200,3.8,,,,27.8,unknown,Visakhapatnam,Andhra Pradesh,17.717,83.233,coastal,Too little data
+IN002050100,,,,,8.1,unknown,Pasighat,Arunanchal Pradesh,28.1,95.383,plains,Too little data
+IN003010600,,,,,1.8,unknown,Silchar,Assam,24.75,92.8,plains,Too little data
+IN003020100,0.9,2.7,3.4,2.9,,clean,Tezpur,Assam,26.617,92.783,plains,Never affected
+IN003030100,,,,,2.8,unknown,Dhubri,Assam,26.017,89.983,plains,Too little data
+IN003041800,4.2,3.6,3.4,3.8,,clean,Guwahati,Assam,26.1,91.583,plains,Never affected
+IN003050401,1.3,2.4,2.0,3.1,,clean,North Lakhimpur,Assam,27.233,94.117,plains,Never affected
+IN003050500,0.9,2.1,1.9,2.8,,clean,Dibrugarh,Assam,27.483,95.017,plains,Never affected
+IN003080100,,,,,1.5,unknown,Pet Jorhat,Assam,26.9,94.2,plains,Too little data
+IN004011500,,,2.7,5.7,,clean,Bhagalpur,Bihar,25.233,86.95,plains,Never affected
+IN004051800,2.1,2.3,3.2,3.2,,clean,Gaya,Bihar,24.75,84.95,plains,Never affected
+IN004091000,,,4.7,5.8,4.8,clean,Daltonganj,Jharkhand,24.05,84.067,plains,Never affected
+IN004102500,2.6,3.1,2.8,3.3,,clean,Patna,Bihar,25.6,85.1,plains,Never affected
+IN004110600,,,,,3.6,unknown,Purnea,Bihar,25.267,87.467,plains,Too little data
+IN004122600,1.5,3.6,5.0,3.7,4.4,clean,Ranchi,Jharkhand,23.317,85.317,plains,Never affected
+IN005010600,3.0,4.2,3.8,3.9,,clean,Ahmadabad,Gujarat,23.067,72.633,plains,Never affected
+IN005030100,,,,,4.7,unknown,Deesa,Gujarat,24.2,72.2,plains,Too little data
+IN005050100,,,,,3.5,unknown,Bhaunagar,Gujarat,21.75,72.2,coastal,Too little data
+IN005090100,,,,,5.5,unknown,Dwarka,Gujarat,22.367,69.083,coastal,Too little data
+IN005100100,3.9,3.5,4.0,5.1,,clean,Veraval,Gujarat,20.9,70.367,coastal,Never affected
+IN005100400,,,,,6.7,unknown,Porbandar,Gujarat,21.65,69.667,coastal,Too little data
+IN005120000,,,,,6.3,unknown,Naliya,Gujarat,23.25,68.85,coastal,Too little data
+IN005120501,3.0,3.7,3.9,4.5,,clean,Bhuj,Gujarat,23.25,69.667,coastal,Never affected
+IN005150100,3.0,3.4,4.2,3.7,,clean,Rajkot,Gujarat,22.3,70.783,plains,Never affected
+IN005171200,3.2,3.9,5.2,5.8,,clean,Surat,Gujarat,21.2,72.833,coastal,Never affected
+IN006011400,,,,,28.1,unknown,Chandigarh,Haryana,30.733,76.883,plains,Too little data
+IN006012800,,,,,6.6,unknown,Ambala,Haryana,30.383,76.767,plains,Too little data
+IN006031000,1.5,23.6,25.7,29.5,5.4,early,Hisar,Haryana,29.167,75.733,plains,Stepped around 1990
+IN007101600,,,,,23.6,unknown,Shimla,Himachal Pradesh,31.1,77.167,hills,Too little data
+IN008010200,1.8,4.3,22.6,2.2,,early,Srinagar,Jammu & Kashmir,34.083,74.833,hills,Stepped around 1990
+IN008040500,,,,,3.7,unknown,Jammu,Jammu & Kashmir,32.667,74.833,plains,Too little data
+IN009010100,4.1,3.8,3.9,30.1,5.7,jumped,Bengaluru,Karnataka,12.967,77.583,plains,Stepped at 2011
+IN009012800,,,,5.3,26.2,unknown,Bangalore,Karnataka,12.95,77.633,plains,Too little data
+IN009021000,5.2,5.8,5.4,30.4,5.3,jumped,Belagavi,Karnataka,15.85,74.617,plains,Stepped at 2011
+IN009070100,3.9,3.5,4.9,30.2,5.9,jumped,Chitradurga,Karnataka,14.233,76.433,plains,Stepped at 2011
+IN009090300,5.2,4.4,5.2,30.7,6.2,jumped,Gadag,Karnataka,15.417,75.633,plains,Stepped at 2011
+IN009100200,,,,,9.8,unknown,Gulbarga,Karnataka,17.35,76.85,plains,Too little data
+IN009120100,,,,,32.4,unknown,Karwar,Karnataka,14.783,74.133,coastal,Too little data
+IN009120400,,,5.1,32.4,5.9,jumped,Honavar,Karnataka,14.283,74.45,coastal,Stepped at 2011
+IN009130300,4.2,5.3,5.6,32.2,6.3,jumped,Mangaluru,Karnataka,12.917,74.883,coastal,Stepped at 2011
+IN010021200,,,,,32.9,unknown,Kannur,Kerala,11.833,75.333,coastal,Too little data
+IN010050700,5.7,4.5,6.4,33.1,8.6,jumped,Kozhikode,Kerala,11.25,75.783,coastal,Stepped at 2011
+IN010100400,4.1,4.3,5.4,35.6,6.5,jumped,Thiruvananthapuram,Kerala,8.483,76.95,coastal,Stepped at 2011
+IN010100700,,,,,30.8,unknown,Thiruvananthapuram,Kerala,8.467,76.95,coastal,Too little data
+IN011020300,3.4,3.4,3.5,4.1,,clean,Jagdalpur,Chhattisgarh,19.083,82.033,plains,Never affected
+IN011060800,2.5,2.4,3.3,3.5,,clean,Pendra Road,Chhattisgarh,22.767,81.9,plains,Never affected
+IN011140700,2.6,2.8,3.3,4.0,,clean,Guna,Madhya Pradesh,24.65,77.317,plains,Never affected
+IN011150300,3.7,2.6,2.6,2.9,,clean,Gwalior,Madhya Pradesh,26.233,78.25,plains,Never affected
+IN011160300,,,,,2.4,unknown,Hoshangabad,Madhya Pradesh,22.767,77.767,plains,Too little data
+IN011170400,3.2,3.6,5.4,6.1,,clean,Indore,Madhya Pradesh,22.717,75.8,plains,Never affected
+IN011180800,2.3,3.0,3.2,3.0,,clean,Jabalpur,Madhya Pradesh,23.2,79.95,plains,Never affected
+IN011291000,3.2,3.0,,,,unknown,Raipur,Chhattisgarh,21.217,81.667,plains,Too little data
+IN011330900,,,,,3.4,unknown,Sagar,Madhya Pradesh,23.85,78.75,plains,Too little data
+IN011340100,1.8,2.2,2.9,3.4,,clean,Satna,Madhya Pradesh,24.567,80.833,plains,Never affected
+IN011351500,3.5,2.8,3.9,3.5,,clean,Bhopal,Madhya Pradesh,23.283,77.35,plains,Never affected
+IN011410500,,,,,2.5,unknown,Ambikapur,Chhattisgarh,23.167,83.25,plains,Too little data
+IN012020100,,,3.8,3.8,,clean,Akola,Maharashtra,20.7,77.033,plains,Never affected
+IN012021700,3.5,3.3,4.1,,,unknown,Akola,Maharashtra,20.7,77.067,plains,Too little data
+IN012030700,,,,,1.2,unknown,Amraoti,Maharashtra,20.933,77.783,plains,Too little data
+IN012041000,6.0,4.2,5.1,5.7,,clean,Aurangabad,Maharashtra,19.85,75.4,plains,Never affected
+IN012051400,,,,,5.2,unknown,Gondia,Maharashtra,21.467,80.2,plains,Too little data
+IN012070800,5.4,4.8,6.8,5.9,,clean,Mumbai,Maharashtra,19.117,72.85,coastal,Never affected
+IN012081300,,,,,6.0,unknown,Buldana,Maharashtra,20.533,76.233,plains,Too little data
+IN012090600,,,,,3.9,unknown,Chandrapur,Maharashtra,19.967,79.3,plains,Too little data
+IN012141800,3.9,3.6,4.7,3.0,,clean,Nagpur Sonegaon,Maharashtra,21.1,79.05,plains,Never affected
+IN012161300,,,5.6,,,unknown,Nasik Ozar,Maharashtra,20.133,73.917,plains,Too little data
+IN012190100,3.8,3.4,3.9,4.4,,clean,Pune,Maharashtra,18.533,73.85,plains,Never affected
+IN012201100,5.4,5.2,5.5,5.9,,clean,Ratnagiri,Maharashtra,16.983,73.333,coastal,Never affected
+IN012201300,,,,,3.9,unknown,Harnai,Maharashtra,17.817,73.1,coastal,Too little data
+IN012220400,,,,,5.5,unknown,Mahabaleshwar,Maharashtra,17.933,73.667,hills,Too little data
+IN012230300,5.1,4.2,3.9,4.2,,clean,Solapur,Maharashtra,17.667,75.9,plains,Never affected
+IN013010200,1.8,10.9,3.0,3.1,,clean,Imphal,Manipur,24.667,93.9,plains,Never affected
+IN017010300,2.9,3.2,3.2,4.4,,clean,Balasore,Odisha,21.517,86.933,coastal,Never affected
+IN017060500,,,,,5.8,unknown,Gopalpur,Odisha,19.267,84.883,coastal,Too little data
+IN017111200,2.6,3.6,4.3,3.3,,clean,Bhubaneswar,Odisha,20.25,85.833,coastal,Never affected
+IN017120100,,,,,3.9,unknown,Sambalpur,Odisha,21.467,83.967,plains,Too little data
+IN017121000,3.0,3.6,4.4,3.7,,clean,Jharsuguda,Odisha,21.917,84.083,plains,Never affected
+IN018091100,,,,,22.3,unknown,Ludhiana,Punjab,30.867,75.933,plains,Too little data
+IN018103100,3.4,12.5,27.8,29.7,7.5,early,Patiala,Punjab,30.333,76.467,plains,Stepped around 1990
+IN019010300,,,,,27.2,unknown,Ajmer,Rajasthan,26.45,74.617,plains,Too little data
+IN019040100,,,3.3,4.1,5.6,clean,Barmer,Rajasthan,25.75,71.383,plains,Never affected
+IN019070100,3.3,22.0,24.5,26.0,,early,Bikaner,Rajasthan,28.0,73.3,plains,Stepped around 1990
+IN019100500,,,,,25.3,unknown,Churu,Rajasthan,28.25,74.917,plains,Too little data
+IN019120700,,,2.6,2.7,5.9,clean,Ganganagar,Rajasthan,29.917,73.917,plains,Never affected
+IN019131301,4.1,23.4,24.3,26.7,4.4,early,Jaipur,Rajasthan,26.817,75.8,plains,Stepped around 1990
+IN019140400,2.2,18.9,24.8,24.6,5.0,early,Jaisalmer,Rajasthan,26.9,70.917,plains,Stepped around 1990
+IN019180500,2.8,17.1,24.4,25.7,4.4,early,Jodhpur,Rajasthan,26.3,73.017,plains,Stepped around 1990
+IN019191200,2.8,16.7,25.6,26.9,5.1,early,Kota,Rajasthan,25.15,75.85,plains,Stepped around 1990
+IN019261900,,,5.3,5.2,7.3,clean,Udaipur Dabok,Rajasthan,24.617,73.883,plains,Never affected
+IN020020300,4.6,4.1,6.0,32.6,7.3,jumped,Cuddalore,Tamil Nadu,11.767,79.767,coastal,Stepped at 2011
+IN020031700,3.5,4.1,4.6,30.9,5.6,jumped,Coimbatore,Tamil Nadu,11.033,77.05,plains,Stepped at 2011
+IN020040900,4.4,3.8,5.0,29.9,4.8,jumped,Chennai,Tamil Nadu,13.0,80.183,coastal,Stepped at 2011
+IN020065100,,,,,32.4,unknown,Kanniyakumari,Tamil Nadu,8.083,77.5,coastal,Too little data
+IN020081700,,,,,8.7,unknown,Madurai,Tamil Nadu,9.833,78.083,plains,Too little data
+IN020100400,,,,7.0,35.2,unknown,Pamban,Tamil Nadu,9.267,79.3,coastal,Too little data
+IN020100500,,,,,34.1,unknown,Tondi,Tamil Nadu,9.733,79.033,coastal,Too little data
+IN020120700,,,,6.9,34.7,unknown,Nagappattinam,Tamil Nadu,10.767,79.85,coastal,Too little data
+IN020130700,3.7,4.1,4.1,28.0,4.9,jumped,Tiruchchirapalli,Tamil Nadu,10.767,78.717,plains,Stepped at 2011
+IN021010100,2.3,3.3,3.1,3.6,,clean,Agartala,Tripura,23.883,91.25,plains,Never affected
+IN021012000,,,,,3.5,unknown,Kailashahar,Tripura,24.317,92.0,plains,Too little data
+IN022021900,2.8,3.1,5.6,21.5,3.7,jumped,New Delhi,NCT of Delhi,28.583,77.2,plains,Stepped at 2011
+IN022023000,,,,,13.5,unknown,New Delhi,NCT of Delhi,28.567,77.117,plains,Too little data
+IN022030600,4.9,4.4,5.8,10.2,20.5,other,Panaji,Goa,15.483,73.817,coastal,Other
+IN022043500,,,5.1,32.4,33.7,jumped,Karaikal,Puducherry,10.917,79.833,coastal,Stepped at 2011
+IN023060800,,,,,10.0,unknown,Bahraich,Uttar Pradesh,27.567,81.6,plains,Too little data
+IN023101700,1.7,13.2,27.7,28.8,4.8,early,Bareilly,Uttar Pradesh,28.367,79.4,plains,Stepped around 1990
+IN023160900,,21.0,28.5,29.0,4.7,early,Dehradun,Uttarakhand,30.317,78.033,plains,Stepped around 1990
+IN023261300,1.3,17.2,24.8,27.8,4.5,early,Gorakhpur,Uttar Pradesh,26.75,83.367,plains,Stepped around 1990
+IN023310500,,,,,22.7,unknown,Jhansi,Uttar Pradesh,25.45,78.617,plains,Too little data
+IN023351400,4.1,24.0,26.8,24.5,2.5,early,Lucknow,Uttar Pradesh,26.75,80.883,plains,Stepped around 1990
+IN023420800,,,,,25.7,unknown,Mukteshwar,Uttarakhand,29.467,79.65,hills,Too little data
+IN023522100,,,,,27.7,unknown,Tehri,Uttarakhand,30.4,78.483,plains,Too little data
+IN023550300,,,3.5,3.7,6.1,clean,Varanasi,Uttar Pradesh,25.45,82.867,plains,Never affected
+IN024034300,3.8,2.6,,,,unknown,Panagarh,West Bengal,23.467,87.433,plains,Too little data
+IN024059900,1.9,2.4,2.0,0.0,,clean,Siliguri,West Bengal,26.633,88.317,plains,Never affected
+IN024140101,5.0,2.1,,,,unknown,Sandheads,West Bengal,20.85,88.25,plains,Too little data
+IN024141500,3.9,3.4,4.2,2.9,,clean,Kolkata,West Bengal,22.65,88.45,plains,Never affected
+IN025010100,6.0,6.6,7.3,36.5,14.9,jumped,Minicoy,Lakshadweep,8.3,73.0,coastal,Stepped at 2011
+IN099990101,,,5.8,33.4,7.7,jumped,Amini,Lakshadweep,11.117,72.733,coastal,Stepped at 2011
+IN099999901,6.1,5.3,6.4,5.4,,clean,Port Blair,Andaman & Nicobar Island,11.667,92.717,coastal,Never affected
+INM00042071,2.2,21.0,25.5,27.6,6.0,early,Amritsar,Punjab,31.71,74.797,plains,Stepped around 1990
+INM00042475,1.8,19.0,25.8,27.8,,early,Allahabad,Uttar Pradesh,25.441,81.735,plains,Stepped around 1990

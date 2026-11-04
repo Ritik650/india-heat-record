@@ -1,0 +1,33 @@
+question,engine,run,seconds
+"India, every station-year, by key prefix",clickhouse_raw,cold,1.377
+"India, every station-year, by key prefix",clickhouse_raw,median_warm,1.08
+"India, every station-year, by key prefix",clickhouse_rollup,cold,0.263
+"India, every station-year, by key prefix",clickhouse_rollup,median_warm,0.115
+"India, every station-year, by key prefix",duckdb_parquet,cold,0.975
+"India, every station-year, by key prefix",duckdb_parquet,median_warm,0.591
+"India, same result, plan's substring filter",clickhouse_raw,cold,2.972
+"India, same result, plan's substring filter",clickhouse_raw,median_warm,1.08
+One station's whole history,clickhouse_raw,cold,0.369
+One station's whole history,clickhouse_raw,median_warm,0.083
+One station's whole history,clickhouse_rollup,cold,0.22
+One station's whole history,clickhouse_rollup,median_warm,0.073
+One station's whole history,duckdb_parquet,cold,0.404
+One station's whole history,duckdb_parquet,median_warm,0.117
+"Every country by decade, full scan",clickhouse_raw,cold,16.593
+"Every country by decade, full scan",clickhouse_raw,median_warm,14.905
+"Every country by decade, full scan",clickhouse_rollup,cold,0.253
+"Every country by decade, full scan",clickhouse_rollup,median_warm,0.129
+"Every country by decade, full scan",duckdb_parquet,cold,13.056
+"Every country by decade, full scan",duckdb_parquet,median_warm,12.357
+"Q6, first version: a join that runs the months step twice",clickhouse_raw,cold,33.451
+"Q6, first version: a join that runs the months step twice",clickhouse_raw,median_warm,31.865
+"Q6, first version: a join that runs the months step twice",clickhouse_rollup,cold,7.674
+"Q6, first version: a join that runs the months step twice",clickhouse_rollup,median_warm,7.335
+"Q6, first version: a join that runs the months step twice",duckdb_parquet,cold,6.79
+"Q6, first version: a join that runs the months step twice",duckdb_parquet,median_warm,6.738
+"Q6, rewritten: window function, in key order",clickhouse_raw,cold,24.127
+"Q6, rewritten: window function, in key order",clickhouse_raw,median_warm,20.152
+"Q6, rewritten: window function, in key order",clickhouse_rollup,cold,2.53
+"Q6, rewritten: window function, in key order",clickhouse_rollup,median_warm,2.337
+"Q6, rewritten: window function, in key order",duckdb_parquet,cold,7.552
+"Q6, rewritten: window function, in key order",duckdb_parquet,median_warm,6.585

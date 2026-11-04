@@ -1,0 +1,763 @@
+{
+  "scale": {
+    "rows": 1074089837,
+    "measurements_before_pivot": 2679264563,
+    "parquet_bytes": 2284954281,
+    "last_date": "2022-09-07"
+  },
+  "quality": {
+    "indian_stations_in_file": 3806,
+    "stations_with_rain_1970": 2426,
+    "stations_with_rain_1973": 82,
+    "stations_with_tmax_1960": 13,
+    "stations_with_tmax_1973": 85,
+    "stations_with_tmax_2010": 84,
+    "stations_with_any_temperature": 175,
+    "stations_with_normals": 58,
+    "stations_in_heat_panel": 28,
+    "hill_stations_in_panel": 0,
+    "zero_rows_india": 60207581,
+    "zero_detail": "India: tempMax = 0 on 60207581 rows, against 1 at +0.1 C and 0 at -0.1 C",
+    "false_zero_rows": 567675,
+    "false_zero_detail": "Rows on temperature stations 1982-2021: 1136483. NOAA rain reports on those rows: 568808. The difference is rows where 0 rain was never reported.",
+    "repeat_detail": "Share of days repeating the previous maximum: 3.5% in 1982-88, 13.6% in 2011-24",
+    "whole_degree_detail": "Whole-degree share of maximums: 100% in 1973-81, 15.6% in 1982-2021",
+    "reconciliation_mismatches": 859,
+    "reconciliation_detail": "1091508 Parquet maximums compared; 1090649 identical, 97 differ, 762 not in the raw files",
+    "source_break_rows": 30650,
+    "stations_outside_outline": 47,
+    "stations_with_gap_of_a_year": 37,
+    "issue_rows": 97,
+    "checks": 15
+  },
+  "repeats": {
+    "comparable_stations": 79,
+    "groups": {
+      "clean": 41,
+      "jumped": 23,
+      "early": 14,
+      "other": 1
+    },
+    "stations_jumping_5_to_15_points": 0,
+    "jumped_median_share": {
+      "1982-88": 3.8,
+      "1989-2000": 4.1,
+      "2001-10": 5.2,
+      "2011-15": 30.7,
+      "2016-19": 6.2
+    },
+    "jumped_median_minimum_share": {
+      "1982-88": 3.8,
+      "1989-2000": 4.0,
+      "2001-10": 4.7,
+      "2011-15": 4.8,
+      "2016-19": 4.8
+    },
+    "clean_median_share_2011_15": 3.7,
+    "onset": {
+      "october_2010": 9.8,
+      "november_2010": 14.1,
+      "december_2010": 30.6,
+      "january_2011": 31.4
+    },
+    "offset": {
+      "december_2015": 31.8,
+      "january_2016": 20.1,
+      "february_2016": 10.6,
+      "march_2016": 8.4
+    },
+    "jumped_share_2015": 30.9,
+    "jumped_share_2016": 9.9,
+    "early_share_1988": 2.2,
+    "early_share_1991": 17.9,
+    "early_share_2005": 27.4,
+    "chennai_region": {
+      "stations": 23,
+      "jumped": 22,
+      "not_jumped": [
+        "Port Blair"
+      ],
+      "jumped_elsewhere": [
+        "New Delhi"
+      ]
+    },
+    "early_states": [
+      "Haryana",
+      "Jammu & Kashmir",
+      "Punjab",
+      "Rajasthan",
+      "Uttar Pradesh",
+      "Uttarakhand"
+    ],
+    "maharashtra": {
+      "stations": 7,
+      "jumped": 0
+    },
+    "peaks": {
+      "jumped": {
+        "peak_pct": 43.6,
+        "trough_pct": 7.7,
+        "peaks_per_trough": 5.7
+      },
+      "early": {
+        "peak_pct": 49.1,
+        "trough_pct": 8.0,
+        "peaks_per_trough": 6.2
+      },
+      "clean": {
+        "peak_pct": 26.9,
+        "trough_pct": 20.4,
+        "peaks_per_trough": 1.3
+      },
+      "jumped_minimums": {
+        "peak_pct": 25.3,
+        "trough_pct": 20.8,
+        "peaks_per_trough": 1.2
+      }
+    },
+    "gap_change": {
+      "jumped_stations": 20,
+      "clean_stations": 32,
+      "jumped_change": 0.59,
+      "clean_change": 0.29,
+      "difference": 0.3,
+      "difference_ci": [
+        0.04,
+        0.56
+      ]
+    }
+  },
+  "q1_heatwave_days": {
+    "panel_stations": 28,
+    "panel_by_class": {
+      "plains": 17,
+      "coastal": 11
+    },
+    "periods": {
+      "1982-89": {
+        "heatwave_days": 1.53,
+        "severe_days": 0.06,
+        "heatwave_days_no_repeat": 1.49,
+        "severe_days_no_repeat": 0.06,
+        "spell_days": 0.85,
+        "heatwave_days_rounded": 1.77,
+        "stations_with_seasons": 28,
+        "seasons": 164
+      },
+      "1990s": {
+        "heatwave_days": 2.19,
+        "severe_days": 0.14,
+        "heatwave_days_no_repeat": 1.9,
+        "severe_days_no_repeat": 0.1,
+        "spell_days": 1.67,
+        "heatwave_days_rounded": 2.42,
+        "stations_with_seasons": 28,
+        "seasons": 218
+      },
+      "2000s": {
+        "heatwave_days": 1.81,
+        "severe_days": 0.07,
+        "heatwave_days_no_repeat": 1.62,
+        "severe_days_no_repeat": 0.04,
+        "spell_days": 1.36,
+        "heatwave_days_rounded": 2.19,
+        "stations_with_seasons": 28,
+        "seasons": 264
+      },
+      "2010s": {
+        "heatwave_days": 2.52,
+        "severe_days": 0.16,
+        "heatwave_days_no_repeat": 1.96,
+        "severe_days_no_repeat": 0.12,
+        "spell_days": 2.11,
+        "heatwave_days_rounded": 2.89,
+        "stations_with_seasons": 28,
+        "seasons": 176
+      },
+      "2020-24": {
+        "heatwave_days": 3.2,
+        "severe_days": 0.66,
+        "heatwave_days_no_repeat": 2.09,
+        "severe_days_no_repeat": 0.4,
+        "spell_days": 2.89,
+        "heatwave_days_rounded": 3.81,
+        "stations_with_seasons": 17,
+        "seasons": 30
+      }
+    },
+    "recorded": {
+      "before": 1.53,
+      "after": 2.52,
+      "change_days": 0.98,
+      "change_days_ci": [
+        0.2,
+        1.82
+      ],
+      "change_pct": 64.0,
+      "change_pct_ci": [
+        15.0,
+        110.0
+      ],
+      "stations_rising": 16,
+      "stations_falling": 8,
+      "stations": 28,
+      "sign_test_p": 0.152,
+      "median_change": 0.27
+    },
+    "without_repeats": {
+      "before": 1.49,
+      "after": 1.96,
+      "change_days": 0.47,
+      "change_days_ci": [
+        -0.09,
+        1.02
+      ],
+      "change_pct": 31.0,
+      "change_pct_ci": [
+        -6.0,
+        70.0
+      ],
+      "stations_rising": 15,
+      "stations_falling": 9,
+      "stations": 28,
+      "sign_test_p": 0.307,
+      "median_change": 0.17
+    },
+    "by_repeat_group": {
+      "clean": {
+        "names": [
+          "Aurangabad",
+          "Bhopal",
+          "Bhubaneswar",
+          "Guwahati",
+          "Indore",
+          "Kolkata",
+          "Mumbai",
+          "Pune",
+          "Ratnagiri",
+          "Solapur"
+        ],
+        "recorded": {
+          "before": 1.24,
+          "after": 1.92,
+          "change_days": 0.68,
+          "change_days_ci": [
+            0.01,
+            1.47
+          ],
+          "change_pct": 55.0,
+          "change_pct_ci": [
+            1.0,
+            107.0
+          ],
+          "stations_rising": 6,
+          "stations_falling": 4,
+          "stations": 10,
+          "sign_test_p": 0.754,
+          "median_change": 0.35
+        },
+        "without_repeats": {
+          "before": 1.18,
+          "after": 1.88,
+          "change_days": 0.7,
+          "change_days_ci": [
+            0.05,
+            1.45
+          ],
+          "change_pct": 59.0,
+          "change_pct_ci": [
+            7.0,
+            115.0
+          ],
+          "stations_rising": 6,
+          "stations_falling": 4,
+          "stations": 10,
+          "sign_test_p": 0.754,
+          "median_change": 0.35
+        }
+      },
+      "jumped": {
+        "names": [
+          "Anantapur",
+          "Belagavi",
+          "Bengaluru",
+          "Chennai",
+          "Chitradurga",
+          "Coimbatore",
+          "Cuddalore",
+          "Hyderabad",
+          "Kakinada",
+          "Machilipatnam",
+          "Mangaluru",
+          "Nellore",
+          "New Delhi",
+          "Thiruvananthapuram"
+        ],
+        "recorded": {
+          "before": 1.25,
+          "after": 1.83,
+          "change_days": 0.58,
+          "change_days_ci": [
+            -0.57,
+            1.87
+          ],
+          "change_pct": 46.0,
+          "change_pct_ci": [
+            -49.0,
+            145.0
+          ],
+          "stations_rising": 6,
+          "stations_falling": 4,
+          "stations": 14,
+          "sign_test_p": 0.754,
+          "median_change": 0.0
+        },
+        "without_repeats": {
+          "before": 1.25,
+          "after": 1.33,
+          "change_days": 0.08,
+          "change_days_ci": [
+            -0.81,
+            0.97
+          ],
+          "change_pct": 6.0,
+          "change_pct_ci": [
+            -63.0,
+            83.0
+          ],
+          "stations_rising": 5,
+          "stations_falling": 5,
+          "stations": 14,
+          "sign_test_p": 1.0,
+          "median_change": 0.0
+        }
+      },
+      "early": {
+        "names": [
+          "Bikaner",
+          "Jaipur",
+          "Lucknow"
+        ],
+        "recorded": {
+          "before": 4.13,
+          "after": 8.29,
+          "change_days": 4.16,
+          "change_days_ci": [
+            2.17,
+            5.97
+          ],
+          "change_pct": 101.0,
+          "change_pct_ci": [
+            75.0,
+            266.0
+          ],
+          "stations_rising": 3,
+          "stations_falling": 0,
+          "stations": 3,
+          "sign_test_p": 0.25,
+          "median_change": 4.35
+        },
+        "without_repeats": {
+          "before": 3.88,
+          "after": 5.48,
+          "change_days": 1.6,
+          "change_days_ci": [
+            0.57,
+            2.43
+          ],
+          "change_pct": 41.0,
+          "change_pct_ci": [
+            20.0,
+            162.0
+          ],
+          "stations_rising": 3,
+          "stations_falling": 0,
+          "stations": 3,
+          "sign_test_p": 0.25,
+          "median_change": 1.8
+        }
+      }
+    },
+    "share_of_rise_from_repeats_pct": 53.0,
+    "stations_under_one_day_both_periods": 12,
+    "biggest_rises": [
+      "New Delhi",
+      "Bhubaneswar",
+      "Jaipur"
+    ],
+    "repeat_pct_2010": 8.5,
+    "repeat_pct_2011": 18.4,
+    "repeat_pct_1982_88": 3.9,
+    "repeat_pct_1991_2010": 7.6,
+    "repeat_pct_2011_2024": 18.0,
+    "stricter_two_day": {
+      "before": 0.85,
+      "after": 2.11
+    },
+    "severe": {
+      "before": 0.06,
+      "after": 0.16,
+      "before_no_repeat": 0.06,
+      "after_no_repeat": 0.12
+    },
+    "rounded_to_whole_degrees": {
+      "before": 1.77,
+      "after": 2.89
+    },
+    "by_class": {
+      "coastal|1982-89": {
+        "heatwave_days": 1.86,
+        "heatwave_days_no_repeat": 1.82
+      },
+      "coastal|1990s": {
+        "heatwave_days": 1.91,
+        "heatwave_days_no_repeat": 1.88
+      },
+      "coastal|2000s": {
+        "heatwave_days": 2.52,
+        "heatwave_days_no_repeat": 2.45
+      },
+      "coastal|2010s": {
+        "heatwave_days": 2.88,
+        "heatwave_days_no_repeat": 2.37
+      },
+      "coastal|2020-24": {
+        "heatwave_days": 1.31,
+        "heatwave_days_no_repeat": 0.82
+      },
+      "plains|1982-89": {
+        "heatwave_days": 1.32,
+        "heatwave_days_no_repeat": 1.27
+      },
+      "plains|1990s": {
+        "heatwave_days": 2.37,
+        "heatwave_days_no_repeat": 1.92
+      },
+      "plains|2000s": {
+        "heatwave_days": 1.35,
+        "heatwave_days_no_repeat": 1.08
+      },
+      "plains|2010s": {
+        "heatwave_days": 2.28,
+        "heatwave_days_no_repeat": 1.69
+      },
+      "plains|2020-24": {
+        "heatwave_days": 4.23,
+        "heatwave_days_no_repeat": 2.78
+      }
+    },
+    "recent_seasons": {
+      "2022": {
+        "stations": 29,
+        "heatwave_days": 5.72,
+        "heatwave_days_usual": 2.71,
+        "no_repeat": 3.99,
+        "no_repeat_usual": 2.09,
+        "stations_above_usual": 8
+      },
+      "2023": {
+        "stations": 16,
+        "heatwave_days": 2.47,
+        "heatwave_days_usual": 5.44,
+        "no_repeat": 1.65,
+        "no_repeat_usual": 4.09,
+        "stations_above_usual": 3
+      },
+      "2024": {
+        "stations": 10,
+        "heatwave_days": 12.41,
+        "heatwave_days_usual": 6.88,
+        "no_repeat": 8.43,
+        "no_repeat_usual": 4.92,
+        "stations_above_usual": 6
+      }
+    },
+    "imd_103_stations": {
+      "1981-90": 413,
+      "2001-10": 575,
+      "2011-20": 600
+    },
+    "imd_change_pct": 45.0,
+    "imd_inside_our_range": true
+  },
+  "q2_days_and_nights": {
+    "stations": 31,
+    "by_repeat_group": {
+      "clean": {
+        "stations": 13,
+        "median_tmax_rate": 0.275,
+        "median_tmin_rate": 0.265,
+        "nights_faster": 8,
+        "median_rate": 0.268
+      },
+      "jumped": {
+        "stations": 12,
+        "median_tmax_rate": 0.313,
+        "median_tmin_rate": 0.193,
+        "nights_faster": 2,
+        "median_rate": 0.244
+      },
+      "early": {
+        "stations": 5,
+        "median_tmax_rate": 0.095,
+        "median_tmin_rate": -0.094,
+        "nights_faster": 1,
+        "median_rate": 0.003
+      }
+    },
+    "median_tmax_rate": 0.275,
+    "median_tmax_rate_ci": [
+      0.163,
+      0.32
+    ],
+    "median_tmin_rate": 0.208,
+    "median_tmin_rate_ci": [
+      0.013,
+      0.272
+    ],
+    "median_difference": -0.107,
+    "median_difference_ci": [
+      -0.21,
+      0.007
+    ],
+    "nights_faster": 11,
+    "days_faster": 20,
+    "sign_test_p": 0.15,
+    "median_difference_no_repeat": -0.111,
+    "nights_faster_no_repeat": 12,
+    "warm_nights_per_season": {
+      "1982-89": {
+        "recorded": 0.2,
+        "without_repeats": 0.18
+      },
+      "1990s": {
+        "recorded": 0.17,
+        "without_repeats": 0.15
+      },
+      "2000s": {
+        "recorded": 0.33,
+        "without_repeats": 0.28
+      },
+      "2010s": {
+        "recorded": 0.46,
+        "without_repeats": 0.35
+      },
+      "2020-24": {
+        "recorded": 0.58,
+        "without_repeats": 0.26
+      }
+    }
+  },
+  "q3_first_40c": {
+    "stations": 22,
+    "median_days_per_decade": -0.9,
+    "median_days_per_decade_ci": [
+      -2.5,
+      1.2
+    ],
+    "earlier": 13,
+    "later": 9,
+    "clearly_earlier": 3,
+    "clearly_later": 0,
+    "sign_test_p": 0.523,
+    "typical_first_date": "8 April",
+    "biggest_year_swing_days": 35.0,
+    "earliest_stations": [
+      {
+        "name": "Rajkot",
+        "days_per_decade": -10.2
+      },
+      {
+        "name": "Jaipur",
+        "days_per_decade": -5.7
+      },
+      {
+        "name": "Anantapur",
+        "days_per_decade": -4.4
+      }
+    ]
+  },
+  "q4_monsoon": {
+    "gauge_stations": 1714,
+    "gauge_seasons": 112598,
+    "first_decade": {
+      "rainy_days": 38.6,
+      "heavy_days": 0.79,
+      "season_mm": 841.0
+    },
+    "last_decade": {
+      "rainy_days": 36.3,
+      "heavy_days": 0.84,
+      "season_mm": 838.0
+    },
+    "median_rainy_days_per_decade": 0.04,
+    "median_heavy_days_per_decade": 0.005,
+    "mean_heavy_days_per_decade": 0.018,
+    "mean_heavy_days_per_decade_ci": [
+      0.012,
+      0.023
+    ],
+    "median_mm_per_decade": 5.0,
+    "stations_heavy_rising_pct": 55.0,
+    "stations_heavy_falling_pct": 43.0,
+    "recent_window": {
+      "stations": 76,
+      "heavy_days_per_season": 0.98,
+      "mean_heavy_days_per_decade": 0.04,
+      "mean_heavy_days_per_decade_ci": [
+        -0.067,
+        0.15
+      ],
+      "stations_rising": 43,
+      "stations_falling": 30,
+      "median_mm_per_decade": 20.0
+    },
+    "network_1970": 2425,
+    "network_1973": 84,
+    "same_stations": 70,
+    "mm_1901_72": 917.0,
+    "mm_1973_81": 501.0,
+    "mm_1982_98": 566.0,
+    "mm_2006_15": 833.0,
+    "apparent_loss_1982_98_pct": 38.0,
+    "ratio_1982_98": 0.68,
+    "ratio_2006_15": 0.9,
+    "rainy_days_1901_72": 42.6,
+    "rainy_days_2006_15": 35.2,
+    "heavy_days_1901_72": 0.81,
+    "heavy_days_2006_15": 0.95
+  },
+  "q5_fastest_stations": {
+    "stations": 31,
+    "median_rate": 0.254,
+    "median_rate_ci": [
+      0.082,
+      0.294
+    ],
+    "warming": 28,
+    "clearly_warming": 19,
+    "clearly_cooling": 0,
+    "suspect": 5,
+    "fastest": [
+      {
+        "name": "Jaipur",
+        "state": "Rajasthan",
+        "mean_rate": 0.49,
+        "ci_low": 0.3,
+        "ci_high": 0.69,
+        "suspect": false
+      },
+      {
+        "name": "Veraval",
+        "state": "Gujarat",
+        "mean_rate": 0.44,
+        "ci_low": 0.24,
+        "ci_high": 0.63,
+        "suspect": false
+      },
+      {
+        "name": "Machilipatnam",
+        "state": "Andhra Pradesh",
+        "mean_rate": 0.38,
+        "ci_low": 0.3,
+        "ci_high": 0.45,
+        "suspect": false
+      },
+      {
+        "name": "Thiruvananthapuram",
+        "state": "Kerala",
+        "mean_rate": 0.36,
+        "ci_low": 0.29,
+        "ci_high": 0.42,
+        "suspect": false
+      },
+      {
+        "name": "Kurnool",
+        "state": "Andhra Pradesh",
+        "mean_rate": 0.35,
+        "ci_low": 0.18,
+        "ci_high": 0.51,
+        "suspect": false
+      }
+    ],
+    "slowest": [
+      {
+        "name": "Indore",
+        "mean_rate": -0.02,
+        "suspect": false
+      },
+      {
+        "name": "Surat",
+        "mean_rate": -0.13,
+        "suspect": false
+      },
+      {
+        "name": "Hisar",
+        "mean_rate": -0.28,
+        "suspect": false
+      }
+    ]
+  },
+  "q6_countries": {
+    "stations_all_countries": 7308,
+    "countries_any": 94,
+    "countries_ranked": 38,
+    "india_rank": 33,
+    "india_stations": 31,
+    "india_median_rate": 0.245,
+    "india_median_rate_ci": [
+      0.104,
+      0.295
+    ],
+    "india_clean_stations_only": {
+      "stations": 13,
+      "median_rate": 0.294,
+      "rank": 28
+    },
+    "median_of_countries": 0.396,
+    "countries_faster_than_india": 32,
+    "fastest": [
+      {
+        "name": "Greenland",
+        "rate": 0.64
+      },
+      {
+        "name": "Ukraine",
+        "rate": 0.64
+      },
+      {
+        "name": "Turkey",
+        "rate": 0.56
+      }
+    ],
+    "slowest": [
+      {
+        "name": "United States",
+        "rate": 0.23
+      },
+      {
+        "name": "Puerto Rico",
+        "rate": 0.23
+      },
+      {
+        "name": "Benin",
+        "rate": 0.21
+      }
+    ],
+    "us_stations": 4666
+  },
+  "imd_records": [
+    {
+      "station": "IN019100500",
+      "name": "Churu",
+      "date": "2019-06-01",
+      "celsius": 50.8
+    },
+    {
+      "station": "IN019100500",
+      "name": "Churu",
+      "date": "2024-05-28",
+      "celsius": 50.5
+    }
+  ]
+}

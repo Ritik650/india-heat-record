@@ -1,0 +1,176 @@
+station_id,name,state,station_class,lat,lon,elevation,coast_km,inside_india
+IN001020700,Anantapur,Andhra Pradesh,plains,14.583,77.633,364.0,265.6,1
+IN001050200,Kakinada,Andhra Pradesh,coastal,16.95,82.233,8.0,5.4,1
+IN001080500,Hyderabad,Andhra Pradesh,plains,17.45,78.47,527.0,274.2,1
+IN001090500,Ramgundam,Andhra Pradesh,plains,18.767,79.433,156.0,334.1,1
+IN001111200,Machilipatnam,Andhra Pradesh,coastal,16.2,81.15,3.0,7.0,1
+IN001111600,Vijayawada,Andhra Pradesh,plains,16.533,80.8,24.0,55.5,1
+IN001120100,Kurnool,Andhra Pradesh,plains,15.8,78.067,281.0,224.2,1
+IN001160200,Nellore,Andhra Pradesh,coastal,14.45,79.983,20.0,21.0,1
+IN001170800,Nizamabad,Andhra Pradesh,plains,18.667,78.1,381.0,401.3,1
+IN001190700,Kalingapatam,Andhra Pradesh,coastal,18.333,84.133,6.0,1.8,0
+IN001200200,Visakhapatnam,Andhra Pradesh,coastal,17.717,83.233,3.0,6.2,1
+IN002050100,Pasighat,Arunanchal Pradesh,plains,28.1,95.383,157.0,692.7,1
+IN003010600,Silchar,Assam,plains,24.75,92.8,29.0,247.1,1
+IN003020100,Tezpur,Assam,plains,26.617,92.783,79.0,401.6,1
+IN003030100,Dhubri,Assam,plains,26.017,89.983,36.0,276.9,1
+IN003041800,Guwahati,Assam,plains,26.1,91.583,54.0,295.9,1
+IN003050401,North Lakhimpur,Assam,plains,27.233,94.117,102.0,537.0,1
+IN003050500,Dibrugarh,Assam,plains,27.483,95.017,111.0,619.0,1
+IN003080100,Pet Jorhat,Assam,plains,26.9,94.2,87.0,515.8,1
+IN004011500,Bhagalpur,Bihar,plains,25.233,86.95,49.0,333.5,1
+IN004051800,Gaya,Bihar,plains,24.75,84.95,116.0,403.4,1
+IN004091000,Daltonganj,Jharkhand,plains,24.05,84.067,221.0,420.5,1
+IN004102500,Patna,Bihar,plains,25.6,85.1,60.0,460.4,1
+IN004110600,Purnea,Bihar,plains,25.267,87.467,38.0,325.3,1
+IN004120400,Ranchi,Jharkhand,plains,23.367,85.333,647.0,275.8,1
+IN004122600,Ranchi,Jharkhand,plains,23.317,85.317,652.0,272.8,1
+IN004160700,Dumka,Jharkhand,plains,24.267,87.25,149.0,222.0,1
+IN004170200,Chaibasa,Jharkhand,plains,22.55,85.817,226.0,176.1,1
+IN005010600,Ahmadabad,Gujarat,plains,23.067,72.633,55.0,87.8,1
+IN005030100,Deesa,Gujarat,plains,24.2,72.2,136.0,213.6,1
+IN005040100,Baroda,Gujarat,coastal,22.3,73.25,33.0,46.0,1
+IN005050100,Bhaunagar,Gujarat,coastal,21.75,72.2,11.0,2.6,1
+IN005090100,Dwarka,Gujarat,coastal,22.367,69.083,11.0,7.4,1
+IN005091300,Jamnagar,Gujarat,coastal,22.45,70.083,20.0,11.5,1
+IN005100100,Veraval,Gujarat,coastal,20.9,70.367,8.0,2.2,0
+IN005100400,Porbandar,Gujarat,coastal,21.65,69.667,7.0,6.8,1
+IN005120000,Naliya,Gujarat,coastal,23.25,68.85,21.0,19.2,1
+IN005120501,Bhuj,Gujarat,coastal,23.25,69.667,80.0,47.6,1
+IN005150100,Rajkot,Gujarat,plains,22.3,70.783,138.0,69.2,1
+IN005171200,Surat,Gujarat,coastal,21.2,72.833,12.0,9.4,1
+IN006011400,Chandigarh,Haryana,plains,30.733,76.883,347.0,1028.2,1
+IN006012800,Ambala,Haryana,plains,30.383,76.767,272.0,988.1,1
+IN006031000,Hisar,Haryana,plains,29.167,75.733,221.0,824.7,1
+IN007011900,Bilaspur,Himachal Pradesh,plains,31.25,76.667,587.0,1073.1,1
+IN007101600,Shimla,Himachal Pradesh,hills,31.1,77.167,2202.0,1076.5,1
+IN008010200,Srinagar,Jammu & Kashmir,hills,34.083,74.833,1587.0,1244.8,1
+IN008040100,Jammu (In-Afb),Jammu & Kashmir,plains,32.683,74.833,314.0,1135.4,1
+IN008040500,Jammu,Jammu & Kashmir,plains,32.667,74.833,367.0,1134.2,1
+IN009010100,Bengaluru,Karnataka,plains,12.967,77.583,921.0,264.1,1
+IN009012800,Bangalore,Karnataka,plains,12.95,77.633,897.0,264.2,1
+IN009021000,Belagavi,Karnataka,plains,15.85,74.617,747.0,86.6,1
+IN009070100,Chitradurga,Karnataka,plains,14.233,76.433,733.0,200.3,1
+IN009090300,Gadag,Karnataka,plains,15.417,75.633,650.0,167.9,1
+IN009100200,Gulbarga,Karnataka,plains,17.35,76.85,458.0,372.6,1
+IN009120100,Karwar,Karnataka,coastal,14.783,74.133,4.0,5.0,1
+IN009120400,Honavar,Karnataka,coastal,14.283,74.45,9.0,0.7,0
+IN009130200,Mangalore,Karnataka,coastal,12.867,74.85,22.0,3.2,1
+IN009130300,Mangaluru,Karnataka,coastal,12.917,74.883,102.0,5.2,1
+IN010021200,Kannur,Kerala,coastal,11.833,75.333,18.0,7.0,0
+IN010033100,Fort Cochin,Kerala,coastal,9.967,76.233,3.0,4.6,0
+IN010050700,Kozhikode,Kerala,coastal,11.25,75.783,5.0,2.4,0
+IN010100400,Thiruvananthapuram,Kerala,coastal,8.483,76.95,64.0,3.7,1
+IN010100700,Thiruvananthapuram,Kerala,coastal,8.467,76.95,8.0,3.0,1
+IN011020300,Jagdalpur,Chhattisgarh,plains,19.083,82.033,553.0,201.7,1
+IN011031100,Betul,Madhya Pradesh,plains,21.867,77.933,653.0,497.8,1
+IN011060800,Pendra Road,Chhattisgarh,plains,22.767,81.9,625.0,482.0,1
+IN011071100,Nowgong,Madhya Pradesh,plains,25.067,79.45,229.0,744.3,1
+IN011122400,Dhar,Madhya Pradesh,plains,22.6,75.3,583.0,244.3,1
+IN011140700,Guna,Madhya Pradesh,plains,24.65,77.317,478.0,532.6,1
+IN011150300,Gwalior,Madhya Pradesh,plains,26.233,78.25,207.0,708.5,1
+IN011160200,Pachmarhi,Madhya Pradesh,hills,22.467,78.433,1075.0,553.8,1
+IN011160300,Hoshangabad,Madhya Pradesh,plains,22.767,77.767,302.0,492.1,1
+IN011170400,Indore,Madhya Pradesh,plains,22.717,75.8,567.0,296.8,1
+IN011180800,Jabalpur,Madhya Pradesh,plains,23.2,79.95,393.0,668.5,1
+IN011240300,Khandwa,Madhya Pradesh,plains,21.833,76.367,318.0,336.1,1
+IN011291000,Raipur,Chhattisgarh,plains,21.217,81.667,294.0,398.8,1
+IN011330900,Sagar,Madhya Pradesh,plains,23.85,78.75,551.0,623.2,1
+IN011340100,Satna,Madhya Pradesh,plains,24.567,80.833,317.0,701.8,1
+IN011351500,Bhopal,Madhya Pradesh,plains,23.283,77.35,523.0,467.4,1
+IN011370100,Umaria,Madhya Pradesh,plains,23.533,80.883,459.0,616.2,1
+IN011410500,Ambikapur,Chhattisgarh,plains,23.167,83.25,611.0,429.1,1
+IN012020100,Akola,Maharashtra,plains,20.7,77.033,282.0,422.8,1
+IN012021700,Akola,Maharashtra,plains,20.7,77.067,305.0,426.2,1
+IN012030700,Amraoti,Maharashtra,plains,20.933,77.783,370.0,492.2,1
+IN012040300,Jalna,Maharashtra,plains,19.833,75.8,519.0,301.1,1
+IN012041000,Aurangabad,Maharashtra,plains,19.85,75.4,579.0,260.7,1
+IN012051400,Gondia,Maharashtra,plains,21.467,80.2,313.0,522.3,1
+IN012070800,Mumbai,Maharashtra,coastal,19.117,72.85,14.0,6.1,1
+IN012081300,Buldana,Maharashtra,plains,20.533,76.233,650.0,347.9,1
+IN012090600,Chandrapur,Maharashtra,plains,19.967,79.3,193.0,453.8,1
+IN012131800,Kolhapur,Maharashtra,plains,16.7,74.233,570.0,98.0,1
+IN012141800,Nagpur Sonegaon,Maharashtra,plains,21.1,79.05,310.0,564.8,1
+IN012161300,Nasik Ozar,Maharashtra,plains,20.133,73.917,608.0,117.6,1
+IN012180300,Parbhani,Maharashtra,plains,19.133,76.833,422.0,402.4,1
+IN012190100,Pune,Maharashtra,plains,18.533,73.85,559.0,97.2,1
+IN012200100,Vengurla,Maharashtra,coastal,15.867,73.633,16.0,2.7,1
+IN012201100,Ratnagiri,Maharashtra,coastal,16.983,73.333,67.0,7.0,1
+IN012201300,Harnai,Maharashtra,coastal,17.817,73.1,20.0,2.9,1
+IN012212400,Sangli,Maharashtra,plains,16.85,74.6,549.0,138.8,1
+IN012220400,Mahabaleshwar,Maharashtra,hills,17.933,73.667,1382.0,62.7,1
+IN012230300,Solapur,Maharashtra,plains,17.667,75.9,479.0,287.0,1
+IN013010200,Imphal,Manipur,plains,24.667,93.9,774.0,316.1,1
+IN014020300,Shillong,Meghalaya,hills,25.567,91.883,1598.0,254.9,1
+IN014020800,Cherrapunji,Meghalaya,hills,25.25,91.733,1313.0,217.0,1
+IN017010300,Balasore,Odisha,coastal,21.517,86.933,20.0,13.5,1
+IN017011200,Chandbali,Odisha,coastal,20.783,86.733,6.0,20.4,1
+IN017060500,Gopalpur,Odisha,coastal,19.267,84.883,17.0,4.4,1
+IN017110100,Puri,Odisha,coastal,19.8,85.817,6.0,3.7,1
+IN017111200,Bhubaneswar,Odisha,coastal,20.25,85.833,46.0,48.3,1
+IN017120100,Sambalpur,Odisha,plains,21.467,83.967,148.0,232.2,1
+IN017121000,Jharsuguda,Odisha,plains,21.917,84.083,230.0,266.4,1
+IN018091100,Ludhiana,Punjab,plains,30.867,75.933,255.0,1008.9,1
+IN018103100,Patiala,Punjab,plains,30.333,76.467,251.0,971.5,1
+IN019010300,Ajmer,Rajasthan,plains,26.45,74.617,486.0,503.4,1
+IN019040100,Barmer,Rajasthan,plains,25.75,71.383,194.0,309.4,1
+IN019051800,Dholpur,Rajasthan,plains,26.667,77.833,176.0,708.1,1
+IN019070100,Bikaner,Rajasthan,plains,28.0,73.3,224.0,614.5,1
+IN019100500,Churu,Rajasthan,plains,28.25,74.917,291.0,701.8,1
+IN019120700,Ganganagar,Rajasthan,plains,29.917,73.917,177.0,832.1,1
+IN019131301,Jaipur,Rajasthan,plains,26.817,75.8,390.0,592.7,1
+IN019140400,Jaisalmer,Rajasthan,plains,26.9,70.917,231.0,401.3,1
+IN019160700,Jhalawar,Rajasthan,plains,24.533,76.167,321.0,427.6,1
+IN019180300,Phalodi,Rajasthan,plains,27.133,72.367,234.0,487.7,1
+IN019180500,Jodhpur,Rajasthan,plains,26.3,73.017,224.0,438.9,1
+IN019190400,Kota-In-Rajasthan,Rajasthan,plains,25.183,75.85,256.0,451.0,1
+IN019191200,Kota,Rajasthan,plains,25.15,75.85,274.0,448.3,1
+IN019260100,Udaipur,Rajasthan,plains,24.583,73.7,582.0,276.6,1
+IN019261900,Udaipur Dabok,Rajasthan,plains,24.617,73.883,514.0,286.8,1
+IN020011100,Vellore,Tamil Nadu,plains,12.917,79.15,214.0,117.9,1
+IN020020300,Cuddalore,Tamil Nadu,coastal,11.767,79.767,12.0,3.0,1
+IN020021800,Kallakkurichchi,Tamil Nadu,plains,11.733,78.967,126.0,87.4,1
+IN020031700,Coimbatore,Tamil Nadu,plains,11.033,77.05,399.0,123.7,1
+IN020040900,Chennai,Tamil Nadu,coastal,13.0,80.183,16.0,10.7,1
+IN020065100,Kanniyakumari,Tamil Nadu,coastal,8.083,77.5,37.0,2.0,0
+IN020081700,Madurai,Tamil Nadu,plains,9.833,78.083,131.0,89.1,1
+IN020100400,Pamban,Tamil Nadu,coastal,9.267,79.3,11.0,3.3,1
+IN020100500,Tondi,Tamil Nadu,coastal,9.733,79.033,5.0,0.1,0
+IN020110800,Salem,Tamil Nadu,plains,11.65,78.167,278.0,170.5,1
+IN020120700,Nagappattinam,Tamil Nadu,coastal,10.767,79.85,9.0,0.2,1
+IN020130700,Tiruchchirapalli,Tamil Nadu,plains,10.767,78.717,88.0,86.5,1
+IN020133800,K. Paramathy,Tamil Nadu,plains,10.95,78.083,181.0,154.3,1
+IN021010100,Agartala,Tripura,plains,23.883,91.25,16.0,73.3,1
+IN021012000,Kailashahar,Tripura,plains,24.317,92.0,30.0,163.2,1
+IN022021900,New Delhi,NCT of Delhi,plains,28.583,77.2,216.0,832.3,1
+IN022023000,New Delhi,NCT of Delhi,plains,28.567,77.117,233.0,826.4,1
+IN022030400,Mormugao,Goa,coastal,15.417,73.783,62.0,2.9,0
+IN022030600,Panaji,Goa,coastal,15.483,73.817,60.0,3.7,1
+IN022043500,Karaikal,Puducherry,coastal,10.917,79.833,7.0,2.3,1
+IN023060800,Bahraich,Uttar Pradesh,plains,27.567,81.6,124.0,861.1,1
+IN023101700,Bareilly,Uttar Pradesh,plains,28.367,79.4,169.0,950.5,1
+IN023160900,Dehradun,Uttarakhand,plains,30.317,78.033,682.0,1038.5,1
+IN023261300,Gorakhpur,Uttar Pradesh,plains,26.75,83.367,77.0,671.2,1
+IN023310500,Jhansi,Uttar Pradesh,plains,25.45,78.617,258.0,690.4,1
+IN023340700,Kheri,Uttar Pradesh,plains,27.9,80.8,147.0,945.3,1
+IN023351400,Lucknow,Uttar Pradesh,plains,26.75,80.883,128.0,859.1,1
+IN023361400,Mainpuri,Uttar Pradesh,plains,27.233,79.05,157.0,840.2,1
+IN023420800,Mukteshwar,Uttarakhand,hills,29.467,79.65,2311.0,1055.7,1
+IN023522100,Tehri,Uttarakhand,plains,30.4,78.483,899.0,1069.3,1
+IN023550300,Varanasi,Uttar Pradesh,plains,25.45,82.867,85.0,615.8,1
+IN023550800,Varanasi,Uttar Pradesh,plains,25.3,83.017,90.0,593.3,1
+IN024034300,Panagarh,West Bengal,plains,23.467,87.433,74.0,132.2,1
+IN024041000,Cooch Behar,West Bengal,plains,26.333,89.467,43.0,325.7,1
+IN024050100,Darjeeling,West Bengal,hills,27.05,88.267,2128.0,447.5,1
+IN024059900,Siliguri,West Bengal,plains,26.633,88.317,131.0,404.3,1
+IN024080100,Jalpaiguri,West Bengal,plains,26.533,88.717,83.0,376.2,1
+IN024090600,Malda,West Bengal,plains,25.033,88.133,31.0,278.7,1
+IN024110900,Midnapore,West Bengal,plains,22.417,87.317,45.0,64.4,1
+IN024140101,Sandheads,West Bengal,plains,20.85,88.25,10.0,85.9,0
+IN024140300,Kolkata (Alipore),West Bengal,coastal,22.533,88.333,6.0,43.2,1
+IN024141500,Kolkata,West Bengal,plains,22.65,88.45,6.0,60.6,1
+IN025010100,Minicoy,Lakshadweep,coastal,8.3,73.0,2.0,4.0,0
+IN099990101,Amini,Lakshadweep,coastal,11.117,72.733,3.0,9.8,0
+IN099999901,Port Blair,Andaman & Nicobar Island,coastal,11.667,92.717,79.0,6.0,1
+INM00042071,Amritsar,Punjab,plains,31.71,74.797,230.4,1048.4,1
+INM00042475,Allahabad,Uttar Pradesh,plains,25.441,81.735,98.1,699.2,1

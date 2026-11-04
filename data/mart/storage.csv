@@ -1,0 +1,4 @@
+table,rows,bytes_on_disk,uncompressed_bytes,parts
+noaa,1074089837,1880002943,46087760091,93
+station_year,3267574,51738480,167922119,4
+station_month,15335837,182104540,445654886,7

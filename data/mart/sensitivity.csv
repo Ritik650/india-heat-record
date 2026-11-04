@@ -1,0 +1,13 @@
+scenario,stations,before_recorded,after_recorded,change_recorded_pct,before_no_repeat,after_no_repeat,change_no_repeat_pct
+This project's rule,28,1.53,2.52,64,1.49,1.96,31
+"Normals from 1981-2010, not 1991-2020",28,1.72,2.96,72,1.68,2.28,36
+Normals not smoothed across 15 days,28,1.63,2.53,55,1.59,1.93,21
+"Hills from 600 m, not 1,000 m",28,1.53,2.54,66,1.49,1.98,33
+"Coast within 25 km, not 50 km",28,1.5,2.51,67,1.46,1.95,34
+"Coast within 100 km, not 50 km",28,1.56,2.54,63,1.52,1.98,30
+"The plan's simpler rule: 40 C and 4.5 C above normal, everywhere",28,0.98,1.76,79,0.98,1.35,38
+"Counted only in runs of 2 or more days, as IMD declares",28,0.85,2.11,147,0.81,1.55,92
+"Panel needs 2 seasons per period, not 3",33,1.55,2.66,71,1.5,2.08,39
+"Panel needs 4 seasons per period, not 3",20,1.78,3.3,85,1.74,2.51,44
+Only stations repeats never affected,10,1.24,1.92,55,1.18,1.88,59
+Leaving out stations that stepped at 2011,14,1.82,3.21,77,1.73,2.58,50

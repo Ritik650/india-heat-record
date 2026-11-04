@@ -1,0 +1,642 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>India's Heat Record</title>
+<meta name="description" content="{{description}}">
+<meta property="og:title" content="India's Heat Record">
+<meta property="og:description" content="{{description}}">
+<meta property="og:type" content="website">
+<meta property="og:url" content="{{site_url}}">
+<meta property="og:image" content="{{site_url}}card.png">
+<meta name="twitter:card" content="summary_large_image">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&display=swap">
+<style>
+/* Tokens from the Stitch design in docs/design/stitch_design_tokens.md. Colour appears only on data. */
+:root {
+  color-scheme: light;
+  --surface: #f7f9fb;
+  --panel: #ffffff;
+  --ink: #191c1e;
+  --quiet: #45474c;
+  --muted: #75777d;
+  --hairline: #e2e8f0;
+  --outline: #c5c6cd;
+  --primary: #091426;
+  --blue: #2a78d6;
+  --orange: #eb6834;
+  --aqua: #1baf7a;
+  --red: #d03b3b;
+  --grey: #a8a6a0;
+  --neutral: #e4e3de;
+  --land: #eceef0;
+  --high-bg: #ffdad6; --high-ink: #93000a;
+  --medium-bg: #e0e3e5; --medium-ink: #191c1e;
+  --low-bg: #eceef0; --low-ink: #45474c;
+  --font: "Inter", "Segoe UI", system-ui, -apple-system, sans-serif;
+}
+@media (prefers-color-scheme: dark) {
+  :root {
+    color-scheme: dark;
+    --surface: #111417;
+    --panel: #191c1e;
+    --ink: #eff1f3;
+    --quiet: #c5c6cd;
+    --muted: #8f9197;
+    --hairline: #2d3133;
+    --outline: #45474c;
+    --primary: #d8e3fb;
+    --blue: #3987e5;
+    --orange: #d95926;
+    --aqua: #199e70;
+    --red: #e66767;
+    --grey: #8f8d87;
+    --neutral: #3a3a37;
+    --land: #2a2d30;
+    --high-bg: #5a0004; --high-ink: #ffdad6;
+    --medium-bg: #3c3f44; --medium-ink: #eff1f3;
+    --low-bg: #2d3133; --low-ink: #c5c6cd;
+  }
+}
+* { box-sizing: border-box; }
+html { scroll-behavior: smooth; scroll-padding-top: 72px; }
+@media (prefers-reduced-motion: reduce) { html { scroll-behavior: auto; } }
+body { margin: 0; background: var(--surface); color: var(--ink); font: 400 15px/1.55 var(--font); }
+a { color: var(--blue); }
+a:focus-visible, button:focus-visible, select:focus-visible, [tabindex]:focus-visible { outline: 2px solid var(--blue); outline-offset: 2px; }
+.top { position: sticky; top: env(safe-area-inset-top, 0px); z-index: 20; background: var(--surface); border-bottom: 1px solid var(--outline); }
+.top div { max-width: 1280px; margin: 0 auto; padding: 12px 24px; display: flex; flex-wrap: wrap; align-items: center; gap: 6px 20px; }
+.top strong { font-weight: 600; color: var(--primary); margin-right: auto; }
+.top a { color: var(--quiet); text-decoration: none; font-size: 14px; }
+.top a:hover { color: var(--primary); text-decoration: underline; }
+main { max-width: 1280px; margin: 0 auto; padding: 32px 24px 56px; display: grid; gap: 32px; }
+h1 { margin: 0; font-size: clamp(28px, 5vw, 40px); line-height: 1.15; font-weight: 600; letter-spacing: -0.02em; color: var(--primary); text-wrap: balance; }
+h2 { margin: 0; font-size: 20px; line-height: 1.3; font-weight: 600; color: var(--primary); text-wrap: balance; }
+h3 { margin: 0; font-size: 15px; line-height: 1.35; font-weight: 600; color: var(--primary); text-wrap: balance; }
+p { margin: 0; max-width: 72ch; }
+.intro { display: grid; gap: 12px; border-bottom: 1px solid var(--outline); padding-bottom: 24px; }
+.scope { color: var(--quiet); }
+.lead { font-size: 17px; line-height: 1.55; max-width: 78ch; }
+.tiles { display: grid; grid-template-columns: repeat(auto-fit, minmax(220px, 1fr)); gap: 16px; }
+.tile { background: var(--panel); border: 1px solid var(--hairline); border-radius: 4px; padding: 18px 20px; display: grid; gap: 6px; align-content: start; }
+.tile span { font-size: 13px; line-height: 1.35; color: var(--quiet); font-weight: 500; }
+.tile b { font-size: 32px; line-height: 1.15; font-weight: 600; letter-spacing: -0.02em; }
+.tile small { font-size: 12.5px; color: var(--muted); }
+.panel { background: var(--panel); border: 1px solid var(--hairline); border-radius: 4px; padding: 20px; display: grid; gap: 10px; align-content: start; min-width: 0; position: relative; }
+.note { color: var(--quiet); font-size: 14px; }
+.grid2 { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 20px; }
+.explorer { display: grid; grid-template-columns: minmax(0, 7fr) minmax(0, 5fr); gap: 20px; align-items: start; }
+.tall2 { grid-row: span 2; }
+@media (max-width: 900px) { .grid2, .explorer { grid-template-columns: minmax(0, 1fr); } .tall2 { grid-row: auto; } }
+@media (max-width: 720px) { .top { position: static; } html { scroll-padding-top: 8px; } }
+section { display: grid; gap: 14px; min-width: 0; }
+section > p { color: var(--quiet); }
+.controls { display: flex; flex-wrap: wrap; gap: 8px 12px; align-items: center; }
+.seg { display: inline-flex; flex-wrap: wrap; border: 1px solid var(--outline); border-radius: 4px; overflow: hidden; }
+.seg button { font: inherit; font-size: 13px; padding: 6px 12px; background: transparent; color: var(--quiet); border: 0; border-right: 1px solid var(--outline); cursor: pointer; }
+.seg button:last-child { border-right: 0; }
+.seg button[aria-pressed="true"] { background: var(--primary); color: var(--surface); }
+select { font: inherit; font-size: 14px; padding: 6px 8px; background: var(--panel); color: var(--ink); border: 1px solid var(--outline); border-radius: 4px; max-width: 100%; }
+label.field { display: inline-flex; gap: 8px; align-items: center; font-size: 13px; color: var(--quiet); }
+svg { display: block; width: 100%; height: auto; overflow: visible; }
+svg text { font-family: var(--font); }
+.mapwrap { max-width: 620px; margin: 0 auto; width: 100%; }
+.state { fill: var(--land); stroke: var(--panel); stroke-width: 0.8; }
+.mark { cursor: pointer; }
+.mark.on { stroke: var(--ink); stroke-width: 2.4; }
+.legend { display: flex; flex-wrap: wrap; gap: 6px 16px; font-size: 13px; color: var(--quiet); align-items: center; }
+.legend i { display: inline-block; width: 12px; height: 12px; margin-right: 6px; vertical-align: -1px; border-radius: 2px; }
+.legend .ln { height: 3px; width: 16px; vertical-align: 3px; border-radius: 2px; }
+.ramp { display: inline-block; width: 140px; height: 10px; border-radius: 2px; vertical-align: -1px; margin: 0 8px; background: linear-gradient(90deg, var(--blue), var(--neutral), var(--red)); }
+.card { display: grid; gap: 10px; }
+.card .sub { color: var(--quiet); font-size: 14px; }
+.chip { display: inline-block; padding: 1px 8px; border-radius: 3px; font-size: 12px; font-weight: 500; white-space: nowrap; }
+.chip.high { background: var(--high-bg); color: var(--high-ink); }
+.chip.medium { background: var(--medium-bg); color: var(--medium-ink); }
+.chip.low, .chip.info { background: var(--low-bg); color: var(--low-ink); }
+.scroll { overflow-x: auto; }
+.tall { max-height: 360px; overflow-y: auto; }
+table { width: 100%; border-collapse: collapse; font-size: 13.5px; line-height: 1.4; }
+th, td { text-align: left; padding: 7px 10px 7px 0; border-bottom: 1px solid var(--hairline); vertical-align: top; }
+thead th { color: var(--quiet); font-weight: 500; font-size: 12.5px; position: sticky; top: 0; background: var(--panel); }
+td.n, th.n { text-align: right; font-variant-numeric: tabular-nums; white-space: nowrap; padding-left: 10px; }
+td.n:last-child, th.n:last-child { padding-right: 0; }
+tbody tr.pick { cursor: pointer; }
+tbody tr.pick:hover, tbody tr.pick.on { background: var(--surface); }
+details { font-size: 13.5px; color: var(--quiet); }
+summary { cursor: pointer; }
+details table { margin-top: 8px; }
+.tip { position: absolute; z-index: 10; pointer-events: none; background: var(--primary); color: var(--surface); font-size: 12.5px; line-height: 1.4; padding: 6px 9px; border-radius: 4px; max-width: 260px; }
+.tip[hidden] { display: none; }
+ul { margin: 0; padding-left: 1.15rem; display: grid; gap: 8px; max-width: 78ch; }
+footer { border-top: 1px solid var(--outline); }
+footer div { max-width: 1280px; margin: 0 auto; padding: 22px 24px 32px; color: var(--quiet); font-size: 13.5px; display: grid; gap: 6px; }
+</style>
+</head>
+<body>
+<header class="top"><div>
+  <strong>India's Heat Record</strong>
+  <a href="#artefact">The artefact</a>
+  <a href="#stations">Stations</a>
+  <a href="#questions">Questions</a>
+  <a href="#engine">Engine</a>
+  <a href="#quality">Data quality</a>
+  <a href="india_heat_record_brief.pdf">Brief (PDF)</a>
+  <a href="{{repo_url}}">GitHub</a>
+</div></header>
+
+<main>
+<div class="intro">
+  <h1>India's Heat Record</h1>
+  <p class="scope">{{rows_b}} billion station-days of NOAA weather records, analysed in ClickHouse. Heat results cover weather stations with complete records, 1982 to 2024. They describe these stations, not all of India.</p>
+  <p class="lead">Heatwave days did rise at these stations, by about a third to a half from the 1980s to the 2010s, in line with IMD's own count. But the public record carries an undocumented reporting artefact that switches on region by region and inflates the count where it applies. Accounting for it changes the answers to several common questions.</p>
+</div>
+
+<div class="tiles">
+  <div class="tile"><span>Rise in heatwave days, as recorded</span><b>{{rec_pct}}</b><small>{{panel}} stations, 1982-89 to the 2010s</small></div>
+  <div class="tile"><span>At stations the artefact never touched</span><b style="color:var(--orange)">{{clean_pct}}</b><small>{{clean_n}} stations, interval {{clean_lo}} to {{clean_hi}}</small></div>
+  <div class="tile"><span>IMD's own count</span><b>{{imd_pct}}</b><small>103 stations, 1981-90 to 2011-20</small></div>
+  <div class="tile"><span>Stations hit by the artefact</span><b>{{hit}} of {{comparable}}</b><small>{{jumped}} stepped at 2011, {{early}} around 1990</small></div>
+</div>
+
+<section id="artefact">
+  <h2>A reporting artefact that follows regional lines</h2>
+  <p>A daily maximum identical to the previous day's, to a tenth of a degree, normally covers about 4% of days. At {{jumped}} stations it jumps from {{onset_nov}}% in November 2010 to {{onset_dec}}% a month later, holds for five years, then falls to {{off_mar}}% by March 2016. No station jumps by 5 to 15 points, so it is all or nothing, and minimums at the same stations never move. {{chennai_jumped}} of the {{chennai_n}} stations in the area of IMD's Chennai centre are in this group, and none of Maharashtra's {{maha_n}}. These repeats sit on local peaks {{peak_ratio}} times as often as on troughs, against {{clean_ratio}} at clean stations, which is what copying a day's peak into the next day would do. No document found so far describes this, so the cause is inferred.</p>
+  <div class="panel">
+    <h3>Repeated maximums switch on and off by group, while minimums never move</h3>
+    <div class="legend" id="rep-legend"></div>
+    <div id="rep-chart"></div>
+    <details><summary>View as a table</summary><div class="scroll tall" id="rep-table"></div></details>
+  </div>
+</section>
+
+<section id="stations">
+  <h2>Explore the stations</h2>
+  <p>Choose a station on the map or in the list. Its own history shows whether the artefact reached it: try Chennai, then Pune.</p>
+  <div class="explorer">
+    <div class="panel">
+      <div class="controls">
+        <div class="seg" role="group" aria-label="Colour stations by">
+          <button type="button" id="mode-group" aria-pressed="true">Reporting artefact</button>
+          <button type="button" id="mode-rate" aria-pressed="false">Warming rate</button>
+        </div>
+        <label class="field" for="station-select">Station <select id="station-select"></select></label>
+      </div>
+      <div class="legend" id="map-legend"></div>
+      <div class="mapwrap" id="map"></div>
+    </div>
+    <div class="panel card" id="card" aria-live="polite"></div>
+  </div>
+  <div class="panel">
+    <h3 id="list-title">All stations</h3>
+    <div class="scroll tall"><table id="station-table"></table></div>
+  </div>
+</section>
+
+<section id="questions">
+  <h2>The questions</h2>
+  <div class="grid2">
+    <div class="panel">
+      <h3>Are heatwave days becoming more frequent? Yes, by about a third to a half</h3>
+      <p class="note">Each station is compared with itself, with 1982-89 as 100. Removing every repeat over-corrects, because it also drops genuine hot days, so the fairest test is the {{clean_n}} stations the artefact never touched. {{clean_fell}} of them fell, so this is a likely rise, not a certain one.</p>
+      <div class="legend" id="q1-legend"></div>
+      <div id="q1-chart"></div>
+    </div>
+    <div class="panel">
+      <h3>Are nights warming faster than days? No</h3>
+      <p class="note">Overall, days warmed +{{tmax}}°C a decade and nights +{{tmin}}°C, and nights led at {{nights}} of {{trend_n}} stations. At stations the artefact never touched the two are level. Each line is one station; a line climbing to the right means nights warmed faster there.</p>
+      <div class="controls"><div class="seg" role="group" aria-label="Show stations" id="q2-filter"></div></div>
+      <div class="legend" id="q2-legend"></div>
+      <div id="q2-chart"></div>
+    </div>
+    <div class="panel">
+      <h3>Is summer starting earlier? Not clearly</h3>
+      <p class="note">The first 40°C of the year usually falls around {{first_date}}. Across {{q3_n}} stations it moved {{q3_rate}} days a decade (interval {{q3_lo}} to {{q3_hi}}), far less than the swing between years. Negative is earlier. Shading covers the middle half of stations.</p>
+      <div id="q3-chart"></div>
+    </div>
+    <div class="panel tall2">
+      <h3>How does India compare? It warmed more slowly than most</h3>
+      <p class="note">Rank {{india_rank}} of {{countries}} countries at +{{india_rate}}°C a decade, 1982-2021, under one rule for every country, or {{india_clean_rank}} using clean stations alone. Lines span the middle half of a country's stations.</p>
+      <div id="q6-chart"></div>
+    </div>
+    <div class="panel">
+      <h3>Is monsoon rain getting more extreme? No clear sign, 1901-1970</h3>
+      <p class="note">{{gauges}} rain gauges with at least 56 of 70 complete seasons. Station averages per June-September season. Across {{recent_n}} stations in 2006-2024, heavy days also show no clear change: {{recent_rate}} a decade, interval {{recent_lo}} to {{recent_hi}}.</p>
+      <div id="q4-rainy"></div>
+      <div id="q4-heavy"></div>
+    </div>
+    <div class="panel">
+      <h3>Why rain after 1972 cannot be compared with rain before it</h3>
+      <p class="note">Coverage falls from {{net_1970}} stations in 1970 to {{net_1973}} in 1973, and the same {{same_n}} stations appear to lose {{rain_loss}}% of their monsoon rain before recovering. A monsoon cannot do that, so this is a change in reporting. No trend is drawn across it.</p>
+      <div class="legend" id="q4b-legend"></div>
+      <div id="q4b-chart"></div>
+    </div>
+    <div class="panel">
+      <h3>India's record is two datasets joined in the early 1970s</h3>
+      <p class="note">Indian stations reporting each year. Rain falls off a cliff in the early 1970s, and temperature effectively starts in 1973, not 1900, so heat questions here begin in 1982.</p>
+      <div class="legend" id="cov-legend"></div>
+      <div id="cov-chart"></div>
+    </div>
+  </div>
+</section>
+
+<section id="engine">
+  <h2>The engine: real times, including where DuckDB wins</h2>
+  <p>All {{rows}} rows take {{noaa_gb}} GB in ClickHouse, smaller than the {{parquet_gb}} GB source file. Median seconds on warm runs, with 4 threads and 3 GB on each engine. Rollups are the reason to use ClickHouse here, and a test holds them to the same answer as a full scan. DuckDB beats the raw table on wide scans.</p>
+  <div class="grid2">
+    <div class="panel"><div class="scroll"><table id="bench-table"></table></div></div>
+    <div class="panel">
+      <h3>Does the heatwave result depend on the choices made?</h3>
+      <div class="scroll tall"><table id="sens-table"></table></div>
+    </div>
+  </div>
+</section>
+
+<section id="quality">
+  <h2>Data quality</h2>
+  <p>Coverage was measured before any finding was reported. Every check is listed here, including those that passed. The <a href="{{repo_url}}/blob/main/docs/plan_corrections.md">plan corrections</a> record where the data disagreed with the original plan, and the <a href="{{repo_url}}/blob/main/docs/issue_log.csv">issue log</a> has the per-station detail.</p>
+  <div class="panel"><div class="scroll"><table id="dq-table"></table></div></div>
+  <div class="panel">
+    <h3>What this cannot tell you</h3>
+    <ul>
+      <li><strong>These are stations, not India.</strong> The file names {{in_file}} Indian stations, but only {{panel}} pass the bar for heatwave trends, none in the hills, and few have complete seasons after 2015.</li>
+      <li><strong>The clean group is small.</strong> {{clean_n}} stations, with a wide interval. They are mostly in the centre and east, so they cannot stand in for the south or north-west.</li>
+      <li><strong>One source.</strong> Every Indian maximum through 2024 comes from a NOAA source its readme says to use with caution, and GHCN-Daily does not adjust for station moves.</li>
+      <li><strong>Not IMD's declarations.</strong> IMD declares heatwaves by sub-division, and has since added percentile thresholds. This applies its published station rule to every year alike.</li>
+      <li><strong>Published figures differ in kind.</strong> IMD's 536 heatwave days in summer 2024 adds up sub-divisions, so it cannot be compared with these per-station counts.</li>
+    </ul>
+  </div>
+</section>
+</main>
+
+<footer><div>
+  <span>Ritik Yadav, November 2026. <a href="{{repo_url}}">Code and methods on GitHub</a>. <a href="india_heat_record_brief.pdf">Two-page brief</a>.</span>
+  <span>Data: Menne et al. 2012, GHCN-Daily, through ClickHouse and NOAA. India's outline is simplified from DataMeet's Census 2011 boundaries, CC BY 4.0, for display only and not an official map.</span>
+</div></footer>
+
+<div class="tip" id="tip" hidden></div>
+
+<script>
+const D = {{data}};
+const NS = "http://www.w3.org/2000/svg";
+const tip = document.getElementById("tip");
+
+function el(tag, attrs, parent, text) {
+  const node = document.createElementNS(NS, tag);
+  for (const k in attrs) node.setAttribute(k, attrs[k]);
+  if (text !== undefined) node.textContent = text;
+  if (parent) parent.appendChild(node);
+  return node;
+}
+function html(tag, attrs, parent, text) {
+  const node = document.createElement(tag);
+  for (const k in attrs) node.setAttribute(k, attrs[k]);
+  if (text !== undefined) node.textContent = text;
+  if (parent) parent.appendChild(node);
+  return node;
+}
+function showTip(text, event) {
+  tip.textContent = "";
+  text.split("\n").forEach(function (line, i) {
+    if (i) tip.appendChild(document.createElement("br"));
+    tip.appendChild(document.createTextNode(line));
+  });
+  tip.hidden = false;
+  const box = tip.getBoundingClientRect();
+  const x = Math.min(window.scrollX + event.clientX + 14, window.scrollX + document.documentElement.clientWidth - box.width - 8);
+  tip.style.left = Math.max(8, x) + "px";
+  tip.style.top = (window.scrollY + event.clientY - box.height - 12) + "px";
+}
+function hideTip() { tip.hidden = true; }
+function signed(v, digits) { return (v >= 0 ? "+" : "") + v.toFixed(digits); }
+function legend(id, items) {
+  const box = document.getElementById(id);
+  items.forEach(function (item) {
+    const span = html("span", {}, box);
+    const swatch = html("i", { class: item.line ? "ln" : "" }, span);
+    swatch.style.background = "var(" + item.color + ")";
+    span.appendChild(document.createTextNode(item.name));
+  });
+}
+function scale(d0, d1, r0, r1) { return function (v) { return r0 + (v - d0) * (r1 - r0) / (d1 - d0); }; }
+
+function frame(box, o) {
+  const W = o.width || 640, H = o.height || 300, m = o.margin || { l: 40, r: 16, t: 10, b: 26 };
+  const svg = el("svg", { viewBox: "0 0 " + W + " " + H, role: "img", "aria-label": o.label || "" }, box);
+  const x = scale(o.x[0], o.x[1], m.l, W - m.r), y = scale(o.y[0], o.y[1], H - m.b, m.t);
+  o.yTicks.forEach(function (t) {
+    el("line", { x1: m.l, x2: W - m.r, y1: y(t), y2: y(t), style: "stroke:var(--hairline)" }, svg);
+    el("text", { x: m.l - 6, y: y(t) + 4, "text-anchor": "end", "font-size": 11, style: "fill:var(--muted)" }, svg, o.yFormat ? o.yFormat(t) : t);
+  });
+  (o.xTicks || []).forEach(function (t) {
+    el("text", { x: x(t), y: H - 8, "text-anchor": "middle", "font-size": 11, style: "fill:var(--muted)" }, svg, t);
+  });
+  return { svg: svg, x: x, y: y, W: W, H: H, m: m };
+}
+function linePath(points, f) {
+  let d = "", pen = false;
+  points.forEach(function (p) {
+    if (p[1] === null || p[1] === undefined) { pen = false; return; }
+    d += (pen ? "L" : "M") + f.x(p[0]).toFixed(1) + " " + f.y(p[1]).toFixed(1);
+    pen = true;
+  });
+  return d;
+}
+function lineChart(id, o) {
+  const f = frame(document.getElementById(id), o);
+  if (o.band) {
+    o.band.forEach(function (run) {
+      if (run.length < 2) return;
+      const top = run.map(function (p) { return f.x(p[0]).toFixed(1) + " " + f.y(p[2]).toFixed(1); });
+      const bottom = run.slice().reverse().map(function (p) { return f.x(p[0]).toFixed(1) + " " + f.y(p[1]).toFixed(1); });
+      el("path", { d: "M" + top.join("L") + "L" + bottom.join("L") + "Z", style: "fill:var(--blue);opacity:.14" }, f.svg);
+    });
+  }
+  if (o.zero) el("line", { x1: f.m.l, x2: f.W - f.m.r, y1: f.y(0), y2: f.y(0), style: "stroke:var(--outline)" }, f.svg);
+  o.series.forEach(function (s) {
+    el("path", { d: linePath(s.points, f), fill: "none", style: "stroke:var(" + s.color + ");stroke-width:2;" + (s.dash ? "stroke-dasharray:4 3" : "") }, f.svg);
+  });
+  const rule = el("line", { y1: f.m.t, y2: f.H - f.m.b, style: "stroke:var(--muted);opacity:0" }, f.svg);
+  const hit = el("rect", { x: f.m.l, y: f.m.t, width: f.W - f.m.l - f.m.r, height: f.H - f.m.t - f.m.b, fill: "transparent" }, f.svg);
+  hit.addEventListener("pointermove", function (e) {
+    const box = f.svg.getBoundingClientRect();
+    const px = (e.clientX - box.left) * f.W / box.width;
+    const xv = Math.round(o.x[0] + (px - f.m.l) * (o.x[1] - o.x[0]) / (f.W - f.m.l - f.m.r));
+    rule.setAttribute("x1", f.x(xv)); rule.setAttribute("x2", f.x(xv)); rule.style.opacity = 1;
+    const lines = [String(xv)];
+    o.series.forEach(function (s) {
+      const p = s.points.find(function (q) { return q[0] === xv; });
+      if (p && p[1] !== null) lines.push(s.name + ": " + p[1].toFixed(o.digits === undefined ? 1 : o.digits) + (o.unit || ""));
+    });
+    showTip(lines.join("\n"), e);
+  });
+  hit.addEventListener("pointerleave", function () { rule.style.opacity = 0; hideTip(); });
+}
+function table(target, head, rows, numeric) {
+  const t = typeof target === "string" ? document.getElementById(target) : target;
+  const thead = html("thead", {}, t), tr = html("tr", {}, thead);
+  head.forEach(function (h, i) { html("th", { scope: "col", class: numeric && numeric.indexOf(i) >= 0 ? "n" : "" }, tr, h); });
+  const body = html("tbody", {}, t);
+  rows.forEach(function (row) {
+    const r = html("tr", {}, body);
+    row.forEach(function (v, i) { html("td", { class: numeric && numeric.indexOf(i) >= 0 ? "n" : "" }, r, v); });
+  });
+  return body;
+}
+
+/* The artefact, by group */
+legend("rep-legend", D.repeats.map(function (s) { return { name: s.name, color: s.color, line: true }; }));
+lineChart("rep-chart", {
+  x: [1982, 2024], y: [0, 40], yTicks: [0, 10, 20, 30, 40], xTicks: [1985, 1990, 1995, 2000, 2005, 2010, 2015, 2020], yFormat: function (t) { return t + "%"; }, unit: "%",
+  series: D.repeats, label: "Share of days repeating the previous reading, by group of stations and year", width: 1200, height: 340, margin: { l: 40, r: 16, t: 10, b: 26 },
+});
+(function () {
+  const years = D.repeats[0].points.map(function (p) { return p[0]; });
+  const rows = years.map(function (y) {
+    return [y].concat(D.repeats.map(function (s) {
+      const p = s.points.find(function (q) { return q[0] === y; });
+      return p && p[1] !== null ? p[1].toFixed(1) + "%" : "";
+    }));
+  });
+  const t = html("table", {}, document.getElementById("rep-table"));
+  table(t, ["Year"].concat(D.repeats.map(function (s) { return s.name; })), rows, [1, 2, 3, 4]);
+})();
+
+/* Station explorer */
+let mode = "group", selected = D.defaultStation;
+const SHAPE = { clean: "circle", jumped: "square", early: "triangle", other: "diamond", unknown: "circle" };
+const GROUP_COLOR = { clean: "--blue", jumped: "--orange", early: "--aqua", other: "--grey", unknown: "--grey" };
+const byId = {};
+D.stations.forEach(function (s) { byId[s.id] = s; });
+
+function rateColor(v) {
+  const t = Math.max(-1, Math.min(1, v / 0.5));
+  const a = t < 0 ? "--blue" : "--red";
+  return "color-mix(in lab, var(" + a + ") " + Math.round(Math.abs(t) * 100) + "%, var(--neutral))";
+}
+const mapBox = document.getElementById("map");
+const mapSvg = el("svg", { viewBox: "0 0 " + D.map.w + " " + D.map.h, role: "group", "aria-label": "Map of India with weather stations" }, mapBox);
+D.map.states.forEach(function (s) { el("path", { d: s, class: "state", "fill-rule": "evenodd" }, mapSvg); });
+const marks = {};
+function drawMark(s) {
+  let node;
+  const r = 6.2, shape = mode === "group" ? SHAPE[s.group] : "circle";
+  if (shape === "square") node = el("rect", { x: s.x - r, y: s.y - r, width: r * 2, height: r * 2 }, mapSvg);
+  else if (shape === "triangle") node = el("path", { d: "M" + s.x + " " + (s.y - r * 1.2) + "L" + (s.x + r * 1.15) + " " + (s.y + r * 0.9) + "L" + (s.x - r * 1.15) + " " + (s.y + r * 0.9) + "Z" }, mapSvg);
+  else if (shape === "diamond") node = el("path", { d: "M" + s.x + " " + (s.y - r * 1.2) + "L" + (s.x + r * 1.2) + " " + s.y + "L" + s.x + " " + (s.y + r * 1.2) + "L" + (s.x - r * 1.2) + " " + s.y + "Z" }, mapSvg);
+  else node = el("circle", { cx: s.x, cy: s.y, r: r }, mapSvg);
+  node.setAttribute("class", "mark" + (s.id === selected ? " on" : ""));
+  node.setAttribute("tabindex", "0");
+  node.setAttribute("role", "button");
+  node.setAttribute("aria-label", s.name + ", " + s.label);
+  node.style.fill = mode === "group" ? "var(" + GROUP_COLOR[s.group] + ")" : rateColor(s.rate);
+  if (s.id !== selected) node.style.stroke = "var(--panel)";
+  node.addEventListener("click", function () { select(s.id); });
+  node.addEventListener("keydown", function (e) { if (e.key === "Enter" || e.key === " ") { e.preventDefault(); select(s.id); } });
+  node.addEventListener("pointermove", function (e) { showTip(s.name + (s.state ? ", " + s.state : "") + "\n" + (mode === "group" ? s.label : signed(s.rate, 2) + "°C a decade"), e); });
+  node.addEventListener("pointerleave", hideTip);
+  marks[s.id] = node;
+}
+function visible() { return D.stations.filter(function (s) { return mode === "group" ? s.group !== "unknown" : s.rate !== null; }); }
+function drawMarks() {
+  Object.keys(marks).forEach(function (k) { marks[k].remove(); delete marks[k]; });
+  const list = visible().slice().sort(function (a, b) { return (a.id === selected) - (b.id === selected); });
+  list.forEach(drawMark);
+  const box = document.getElementById("map-legend");
+  box.textContent = "";
+  if (mode === "group") {
+    legend("map-legend", D.groups.map(function (g) { return { name: g.name + " (" + g.count + ")", color: g.color }; }));
+  } else {
+    const span = html("span", {}, box);
+    span.appendChild(document.createTextNode("-0.5"));
+    html("i", { class: "ramp" }, span);
+    span.appendChild(document.createTextNode("+0.5 °C a decade"));
+  }
+}
+function listStations() {
+  const t = document.getElementById("station-table");
+  t.textContent = "";
+  const rows = D.stations.filter(function (s) { return s.group !== "unknown" || s.rate !== null; }).slice().sort(function (a, b) {
+    const ar = a.rate === null ? -9 : a.rate, br = b.rate === null ? -9 : b.rate;
+    return br - ar || a.name.localeCompare(b.name);
+  });
+  const body = table(t, ["Station", "State", "Reporting", "°C a decade"], rows.map(function (s) { return [s.name, s.state, s.label, s.rate === null ? "" : signed(s.rate, 2)]; }), [3]);
+  Array.prototype.forEach.call(body.children, function (tr, i) {
+    tr.className = "pick" + (rows[i].id === selected ? " on" : "");
+    tr.setAttribute("tabindex", "0");
+    tr.addEventListener("click", function () { select(rows[i].id); });
+    tr.addEventListener("keydown", function (e) { if (e.key === "Enter") select(rows[i].id); });
+  });
+}
+function card() {
+  const s = byId[selected], box = document.getElementById("card");
+  box.textContent = "";
+  html("h3", {}, box, s.name);
+  html("div", { class: "sub" }, box, [s.state, s.cls, Math.round(s.elev) + " m"].filter(Boolean).join(" · "));
+  const row = html("div", {}, box);
+  html("span", { class: "chip " + (s.group === "clean" ? "low" : s.group === "unknown" ? "low" : "high") }, row, s.label);
+  html("h3", {}, box, "How often the reading repeats the day before");
+  const chart = html("div", { id: "card-chart" }, box);
+  const points = s.years;
+  const f = frame(chart, { x: [1982, 2024], y: [0, 50], yTicks: [0, 25, 50], xTicks: [1990, 2000, 2010, 2020], yFormat: function (t) { return t + "%"; }, height: 170, width: 480, label: "Repeat share for " + s.name });
+  el("path", { d: linePath(points.map(function (p) { return [p[0], p[2]]; }), f), fill: "none", style: "stroke:var(--grey);stroke-width:1.5;stroke-dasharray:4 3" }, f.svg);
+  el("path", { d: linePath(points.map(function (p) { return [p[0], p[1]]; }), f), fill: "none", style: "stroke:var(--orange);stroke-width:2" }, f.svg);
+  const key = html("div", { class: "legend" }, box);
+  [["Maximums", "--orange"], ["Minimums", "--grey"]].forEach(function (k) {
+    const sp = html("span", {}, key), i = html("i", { class: "ln" }, sp);
+    i.style.background = "var(" + k[1] + ")";
+    sp.appendChild(document.createTextNode(k[0]));
+  });
+  if (s.rate !== null) {
+    html("p", { class: "note" }, box, "Warming " + signed(s.rate, 2) + "°C a decade (interval " + signed(s.rateLo, 2) + " to " + signed(s.rateHi, 2) + "): days " + signed(s.tmax, 2) + ", nights " + signed(s.tmin, 2) + "." + (s.suspect ? " Day and night rates differ too much to trust." : ""));
+  } else {
+    html("p", { class: "note" }, box, "Too few complete months for a warming rate.");
+  }
+  if (s.periods) {
+    const t = html("table", {}, box);
+    table(t, ["Heatwave days a season", "As recorded", "Repeats removed"], s.periods.map(function (p) { return [p[0], p[1].toFixed(1), p[2].toFixed(1)]; }), [1, 2]);
+  } else {
+    html("p", { class: "note" }, box, "Not in the heatwave panel, which needs complete hot seasons in every period.");
+  }
+}
+function select(id) {
+  selected = id;
+  document.getElementById("station-select").value = id;
+  drawMarks();
+  listStations();
+  card();
+}
+(function () {
+  const sel = document.getElementById("station-select");
+  D.stations.filter(function (s) { return s.group !== "unknown" || s.rate !== null; }).slice().sort(function (a, b) { return a.name.localeCompare(b.name); }).forEach(function (s) { html("option", { value: s.id }, sel, s.name); });
+  sel.addEventListener("change", function () { select(sel.value); });
+  function setMode(next) {
+    mode = next;
+    document.getElementById("mode-group").setAttribute("aria-pressed", next === "group");
+    document.getElementById("mode-rate").setAttribute("aria-pressed", next === "rate");
+    if (next === "rate" && byId[selected].rate === null) selected = D.defaultRateStation;
+    select(selected);
+  }
+  document.getElementById("mode-group").addEventListener("click", function () { setMode("group"); });
+  document.getElementById("mode-rate").addEventListener("click", function () { setMode("rate"); });
+  select(selected);
+})();
+
+/* Q1 */
+legend("q1-legend", D.q1.series.map(function (s) { return { name: s.name + " " + s.change, color: s.color, line: true }; }).concat([{ name: "IMD's 103 stations " + D.q1.imd, color: "--ink" }]));
+(function () {
+  const box = document.getElementById("q1-chart"), labels = D.q1.periods;
+  const f = frame(box, { x: [0, labels.length - 1], y: [80, 180], yTicks: [80, 100, 120, 140, 160, 180], height: 280, margin: { l: 40, r: 26, t: 10, b: 26 }, label: "Heatwave days per station by period, 1982-89 as 100" });
+  labels.forEach(function (t, i) { el("text", { x: f.x(i), y: f.H - 8, "text-anchor": "middle", "font-size": 11, style: "fill:var(--muted)" }, f.svg, t); });
+  D.q1.series.forEach(function (s) {
+    el("path", { d: linePath(s.points.map(function (v, i) { return [i, v]; }), f), fill: "none", style: "stroke:var(" + s.color + ");stroke-width:2" }, f.svg);
+    s.points.forEach(function (v, i) {
+      const c = el("circle", { cx: f.x(i), cy: f.y(v), r: 5, style: "fill:var(" + s.color + ");stroke:var(--panel);stroke-width:2" }, f.svg);
+      c.addEventListener("pointermove", function (e) { showTip(s.name + "\n" + labels[i] + ": " + v.toFixed(0), e); });
+      c.addEventListener("pointerleave", hideTip);
+    });
+  });
+  const ix = f.x(labels.length - 1), iy = f.y(D.q1.imdIndex);
+  const dia = el("path", { d: "M" + ix + " " + (iy - 7) + "L" + (ix + 7) + " " + iy + "L" + ix + " " + (iy + 7) + "L" + (ix - 7) + " " + iy + "Z", style: "fill:var(--ink)" }, f.svg);
+  dia.addEventListener("pointermove", function (e) { showTip("IMD's 103 stations, 1981-90 to 2011-20: " + D.q1.imd, e); });
+  dia.addEventListener("pointerleave", hideTip);
+})();
+
+/* Q2 */
+(function () {
+  const groups = [["all", "All"], ["clean", "Never affected"], ["jumped", "Stepped at 2011"], ["early", "Stepped around 1990"]];
+  let current = "all";
+  legend("q2-legend", [{ name: "Days faster", color: "--blue", line: true }, { name: "Nights faster", color: "--orange", line: true }, { name: "Median", color: "--ink", line: true }]);
+  const filter = document.getElementById("q2-filter"), box = document.getElementById("q2-chart");
+  function median(values) { const v = values.slice().sort(function (a, b) { return a - b; }), m = v.length >> 1; return v.length % 2 ? v[m] : (v[m - 1] + v[m]) / 2; }
+  function draw() {
+    box.textContent = "";
+    const rows = D.q2.filter(function (r) { return current === "all" || r.group === current; });
+    const f = frame(box, { x: [0, 1], y: [-0.5, 1.1], yTicks: [-0.4, 0, 0.4, 0.8], height: 300, margin: { l: 120, r: 120, t: 10, b: 26 }, yFormat: function (t) { return signed(t, 1); }, label: "Warming by day and by night at each station" });
+    el("line", { x1: f.x(0), x2: f.x(1), y1: f.y(0), y2: f.y(0), style: "stroke:var(--outline)" }, f.svg);
+    el("text", { x: f.x(0), y: f.H - 8, "text-anchor": "middle", "font-size": 11, style: "fill:var(--muted)" }, f.svg, "Days");
+    el("text", { x: f.x(1), y: f.H - 8, "text-anchor": "middle", "font-size": 11, style: "fill:var(--muted)" }, f.svg, "Nights");
+    rows.forEach(function (r) {
+      const color = r.tmin > r.tmax ? "--orange" : "--blue";
+      const l = el("line", { x1: f.x(0), x2: f.x(1), y1: f.y(r.tmax), y2: f.y(r.tmin), style: "stroke:var(" + color + ");stroke-width:1.5;opacity:.7" }, f.svg);
+      const hit = el("line", { x1: f.x(0), x2: f.x(1), y1: f.y(r.tmax), y2: f.y(r.tmin), style: "stroke:transparent;stroke-width:10;cursor:default" }, f.svg);
+      hit.addEventListener("pointermove", function (e) { l.style.strokeWidth = 3; l.style.opacity = 1; showTip(r.name + "\nDays " + signed(r.tmax, 2) + ", nights " + signed(r.tmin, 2), e); });
+      hit.addEventListener("pointerleave", function () { l.style.strokeWidth = 1.5; l.style.opacity = 0.7; hideTip(); });
+    });
+    const a = median(rows.map(function (r) { return r.tmax; })), b = median(rows.map(function (r) { return r.tmin; }));
+    el("line", { x1: f.x(0), x2: f.x(1), y1: f.y(a), y2: f.y(b), style: "stroke:var(--ink);stroke-width:3" }, f.svg);
+    el("text", { x: f.x(0) - 8, y: f.y(a) + 4, "text-anchor": "end", "font-size": 12, "font-weight": 600, style: "fill:var(--ink)" }, f.svg, "median " + signed(a, 2));
+    el("text", { x: f.x(1) + 8, y: f.y(b) + 4, "text-anchor": "start", "font-size": 12, "font-weight": 600, style: "fill:var(--ink)" }, f.svg, "median " + signed(b, 2));
+    Array.prototype.forEach.call(filter.children, function (node) { node.setAttribute("aria-pressed", node.dataset.key === current); });
+  }
+  groups.forEach(function (g) {
+    const n = html("button", { type: "button", "data-key": g[0] }, filter, g[1]);
+    n.addEventListener("click", function () { current = g[0]; draw(); });
+  });
+  draw();
+})();
+
+/* Q3 */
+lineChart("q3-chart", {
+  x: [1982, 2024], y: [-25, 30], yTicks: [-20, -10, 0, 10, 20, 30], xTicks: [1985, 1995, 2005, 2015], zero: true, digits: 0, unit: " days", height: 260,
+  series: [{ name: "Median shift", color: "--blue", points: D.q3.line }], band: D.q3.band, label: "First 40 degree day compared with each station's usual date, by year",
+});
+
+/* Q4 */
+function bars(id, o) {
+  const f = frame(document.getElementById(id), { x: [-0.5, o.rows.length - 0.5], y: [0, o.max], yTicks: o.ticks, height: o.height || 200, label: o.label, yFormat: o.yFormat });
+  const step = f.x(1) - f.x(0), w = Math.min(step * 0.62, 56);
+  o.rows.forEach(function (r, i) {
+    const x = f.x(i) - w / 2, y = f.y(r.value), h = f.y(0) - y;
+    const b = el("path", { d: "M" + x + " " + (y + h) + "V" + (y + 4) + "Q" + x + " " + y + " " + (x + 4) + " " + y + "H" + (x + w - 4) + "Q" + (x + w) + " " + y + " " + (x + w) + " " + (y + 4) + "V" + (y + h) + "Z", style: "fill:var(" + (r.color || o.color) + ")" }, f.svg);
+    b.addEventListener("pointermove", function (e) { showTip(r.label + ": " + r.text, e); });
+    b.addEventListener("pointerleave", hideTip);
+    el("text", { x: f.x(i), y: y - 5, "text-anchor": "middle", "font-size": 11, style: "fill:var(--quiet)" }, f.svg, r.text);
+    el("text", { x: f.x(i), y: f.H - 8, "text-anchor": "middle", "font-size": 11, style: "fill:var(--muted)" }, f.svg, r.label);
+  });
+}
+bars("q4-rainy", { rows: D.q4.rainy, max: 50, ticks: [0, 25, 50], color: "--blue", label: "Rainy days per season by decade", height: 170 });
+bars("q4-heavy", { rows: D.q4.heavy, max: 1.2, ticks: [0, 0.5, 1], color: "--orange", label: "Heavy days per season by decade", height: 150 });
+legend("q4b-legend", D.q4.statuses);
+bars("q4b-chart", { rows: D.q4.balance, max: 1100, ticks: [0, 500, 1000], color: "--blue", label: "June to September rain as reported, same stations, by era", height: 240 });
+
+/* Coverage */
+legend("cov-legend", D.coverage.map(function (s) { return { name: s.name, color: s.color, line: true }; }));
+lineChart("cov-chart", {
+  x: [1901, 2022], y: [0, 3500], yTicks: [0, 1000, 2000, 3000], xTicks: [1910, 1930, 1950, 1970, 1990, 2010], digits: 0, height: 270,
+  series: D.coverage, label: "Indian stations reporting rain and maximum temperature each year", margin: { l: 46, r: 16, t: 10, b: 26 },
+});
+
+/* Q6 */
+(function () {
+  const rows = D.q6, H = rows.length * 17 + 34;
+  const f = frame(document.getElementById("q6-chart"), { x: [0, 0.8], y: [0, 1], yTicks: [], xTicks: [0, 0.2, 0.4, 0.6, 0.8], height: H, width: 560, margin: { l: 112, r: 16, t: 6, b: 26 }, label: "Countries ranked by median warming rate" });
+  [0, 0.2, 0.4, 0.6, 0.8].forEach(function (t) { el("line", { x1: f.x(t), x2: f.x(t), y1: f.m.t, y2: f.H - f.m.b, style: "stroke:var(--hairline)" }, f.svg); });
+  rows.forEach(function (r, i) {
+    const y = f.m.t + 8 + i * 17, on = r.country === "IN", color = on ? "--orange" : "--grey";
+    el("text", { x: f.m.l - 8, y: y + 4, "text-anchor": "end", "font-size": 11, "font-weight": on ? 600 : 400, style: "fill:var(" + (on ? "--ink" : "--quiet") + ")" }, f.svg, r.name);
+    el("line", { x1: f.x(r.q25), x2: f.x(r.q75), y1: y, y2: y, style: "stroke:var(" + color + ");stroke-width:" + (on ? 2 : 1.25) + ";opacity:" + (on ? 1 : 0.55) }, f.svg);
+    const dot = el("circle", { cx: f.x(r.rate), cy: y, r: on ? 6 : 4, style: "fill:var(" + color + ")" }, f.svg);
+    const hit = el("rect", { x: f.m.l, y: y - 8, width: f.W - f.m.l - f.m.r, height: 16, fill: "transparent" }, f.svg);
+    hit.addEventListener("pointermove", function (e) { dot.setAttribute("r", on ? 7 : 5.5); showTip(r.name + ", rank " + r.rank + "\n" + signed(r.rate, 2) + "°C a decade, " + r.stations + " stations", e); });
+    hit.addEventListener("pointerleave", function () { dot.setAttribute("r", on ? 6 : 4); hideTip(); });
+  });
+})();
+
+/* Tables */
+table("bench-table", ["Question", "ClickHouse raw", "ClickHouse rollup", "DuckDB on Parquet"], D.bench, [1, 2, 3]);
+table("sens-table", ["If this changes", "Stations", "As recorded", "Repeats removed"], D.sens, [1, 2, 3]);
+(function () {
+  const t = document.getElementById("dq-table");
+  const body = table(t, ["Check", "Severity", "What was checked", "Affected", "Action taken"], D.dq.map(function (r) { return [r.check, "", r.description, r.count, r.action]; }), [3]);
+  Array.prototype.forEach.call(body.children, function (tr, i) {
+    const s = D.dq[i].severity;
+    html("span", { class: "chip " + s }, tr.children[1], s.charAt(0).toUpperCase() + s.slice(1));
+  });
+})();
+</script>
+</body>
+</html>

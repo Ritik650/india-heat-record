@@ -1,0 +1,1589 @@
+{
+  "uid": "india-heat",
+  "title": "India's Heat Record",
+  "tags": [
+    "clickhouse",
+    "ghcn",
+    "india"
+  ],
+  "timezone": "utc",
+  "schemaVersion": 41,
+  "version": 1,
+  "editable": false,
+  "graphTooltip": 0,
+  "liveNow": false,
+  "refresh": "",
+  "time": {
+    "from": "1970-01-01T00:00:00.000Z",
+    "to": "2025-06-30T00:00:00.000Z"
+  },
+  "timepicker": {
+    "hidden": true
+  },
+  "templating": {
+    "list": []
+  },
+  "annotations": {
+    "list": []
+  },
+  "links": [],
+  "panels": [
+    {
+      "id": 1,
+      "type": "text",
+      "title": "",
+      "description": "",
+      "gridPos": {
+        "x": 0,
+        "y": 0,
+        "w": 24,
+        "h": 3
+      },
+      "options": {
+        "mode": "markdown",
+        "content": "## India's Heat Record\nWeather stations with complete records, 1982 to 2024. This describes these stations, not all of India. Source: NOAA GHCN-Daily through ClickHouse, with NOAA's raw files from September 2022 on. Normals: 1991-2020."
+      },
+      "fieldConfig": {
+        "defaults": {},
+        "overrides": []
+      },
+      "transformations": [],
+      "targets": [],
+      "transparent": true
+    },
+    {
+      "id": 2,
+      "type": "stat",
+      "title": "Rise in heatwave days, as recorded",
+      "description": "Change from 1982-89 to the 2010s at 28 stations, each compared with itself.",
+      "gridPos": {
+        "x": 0,
+        "y": 3,
+        "w": 6,
+        "h": 4
+      },
+      "datasource": {
+        "type": "grafana-clickhouse-datasource",
+        "uid": "clickhouse"
+      },
+      "options": {
+        "colorMode": "value",
+        "graphMode": "none",
+        "justifyMode": "auto",
+        "textMode": "value",
+        "reduceOptions": {
+          "calcs": [
+            "lastNotNull"
+          ],
+          "fields": "",
+          "values": false
+        }
+      },
+      "fieldConfig": {
+        "defaults": {
+          "unit": "percent",
+          "decimals": 0,
+          "color": {
+            "mode": "fixed",
+            "fixedColor": "#a8a6a0"
+          },
+          "thresholds": {
+            "mode": "absolute",
+            "steps": [
+              {
+                "color": "#a8a6a0",
+                "value": null
+              }
+            ]
+          }
+        },
+        "overrides": []
+      },
+      "transformations": [],
+      "targets": [
+        {
+          "datasource": {
+            "type": "grafana-clickhouse-datasource",
+            "uid": "clickhouse"
+          },
+          "editorType": "sql",
+          "format": 1,
+          "queryType": "table",
+          "rawSql": "SELECT value FROM heat.dash_summary WHERE metric = 'change_recorded_pct'",
+          "refId": "A"
+        }
+      ]
+    },
+    {
+      "id": 3,
+      "type": "stat",
+      "title": "With every repeat removed",
+      "description": "The same change without readings identical to the day before. This over-corrects, because it also drops genuine hot days.",
+      "gridPos": {
+        "x": 6,
+        "y": 3,
+        "w": 6,
+        "h": 4
+      },
+      "datasource": {
+        "type": "grafana-clickhouse-datasource",
+        "uid": "clickhouse"
+      },
+      "options": {
+        "colorMode": "value",
+        "graphMode": "none",
+        "justifyMode": "auto",
+        "textMode": "value",
+        "reduceOptions": {
+          "calcs": [
+            "lastNotNull"
+          ],
+          "fields": "",
+          "values": false
+        }
+      },
+      "fieldConfig": {
+        "defaults": {
+          "unit": "percent",
+          "decimals": 0,
+          "color": {
+            "mode": "fixed",
+            "fixedColor": "#2a78d6"
+          },
+          "thresholds": {
+            "mode": "absolute",
+            "steps": [
+              {
+                "color": "#2a78d6",
+                "value": null
+              }
+            ]
+          }
+        },
+        "overrides": []
+      },
+      "transformations": [],
+      "targets": [
+        {
+          "datasource": {
+            "type": "grafana-clickhouse-datasource",
+            "uid": "clickhouse"
+          },
+          "editorType": "sql",
+          "format": 1,
+          "queryType": "table",
+          "rawSql": "SELECT value FROM heat.dash_summary WHERE metric = 'change_no_repeat_pct'",
+          "refId": "A"
+        }
+      ]
+    },
+    {
+      "id": 4,
+      "type": "stat",
+      "title": "At stations the artefact never touched",
+      "description": "The fairest test, from 10 stations whose records never had the problem. The interval is wide.",
+      "gridPos": {
+        "x": 12,
+        "y": 3,
+        "w": 6,
+        "h": 4
+      },
+      "datasource": {
+        "type": "grafana-clickhouse-datasource",
+        "uid": "clickhouse"
+      },
+      "options": {
+        "colorMode": "value",
+        "graphMode": "none",
+        "justifyMode": "auto",
+        "textMode": "value",
+        "reduceOptions": {
+          "calcs": [
+            "lastNotNull"
+          ],
+          "fields": "",
+          "values": false
+        }
+      },
+      "fieldConfig": {
+        "defaults": {
+          "unit": "percent",
+          "decimals": 0,
+          "color": {
+            "mode": "fixed",
+            "fixedColor": "#eb6834"
+          },
+          "thresholds": {
+            "mode": "absolute",
+            "steps": [
+              {
+                "color": "#eb6834",
+                "value": null
+              }
+            ]
+          }
+        },
+        "overrides": []
+      },
+      "transformations": [],
+      "targets": [
+        {
+          "datasource": {
+            "type": "grafana-clickhouse-datasource",
+            "uid": "clickhouse"
+          },
+          "editorType": "sql",
+          "format": 1,
+          "queryType": "table",
+          "rawSql": "SELECT value FROM heat.dash_summary WHERE metric = 'change_clean_pct'",
+          "refId": "A"
+        }
+      ]
+    },
+    {
+      "id": 5,
+      "type": "stat",
+      "title": "Stations hit by the reporting artefact",
+      "description": "Of 79 stations with data on both sides of 2011.",
+      "gridPos": {
+        "x": 18,
+        "y": 3,
+        "w": 6,
+        "h": 4
+      },
+      "datasource": {
+        "type": "grafana-clickhouse-datasource",
+        "uid": "clickhouse"
+      },
+      "options": {
+        "colorMode": "value",
+        "graphMode": "none",
+        "justifyMode": "auto",
+        "textMode": "value",
+        "reduceOptions": {
+          "calcs": [
+            "lastNotNull"
+          ],
+          "fields": "",
+          "values": false
+        }
+      },
+      "fieldConfig": {
+        "defaults": {
+          "unit": "none",
+          "decimals": 0,
+          "color": {
+            "mode": "fixed",
+            "fixedColor": "#191c1e"
+          },
+          "thresholds": {
+            "mode": "absolute",
+            "steps": [
+              {
+                "color": "#191c1e",
+                "value": null
+              }
+            ]
+          }
+        },
+        "overrides": []
+      },
+      "transformations": [],
+      "targets": [
+        {
+          "datasource": {
+            "type": "grafana-clickhouse-datasource",
+            "uid": "clickhouse"
+          },
+          "editorType": "sql",
+          "format": 1,
+          "queryType": "table",
+          "rawSql": "SELECT value FROM heat.dash_summary WHERE metric = 'stations_hit'",
+          "refId": "A"
+        }
+      ]
+    },
+    {
+      "id": 6,
+      "type": "geomap",
+      "title": "Warming rate by station, \u00b0C per decade, 1982-2024",
+      "description": "Blue to red is cool to warm.",
+      "gridPos": {
+        "x": 0,
+        "y": 7,
+        "w": 14,
+        "h": 20
+      },
+      "datasource": {
+        "type": "grafana-clickhouse-datasource",
+        "uid": "clickhouse"
+      },
+      "options": {
+        "view": {
+          "id": "coords",
+          "lat": 22.8,
+          "lon": 82.5,
+          "zoom": 4.75,
+          "allLayers": true
+        },
+        "controls": {
+          "showZoom": false,
+          "mouseWheelZoom": false,
+          "showAttribution": false,
+          "showScale": false,
+          "showMeasure": false,
+          "showDebug": false
+        },
+        "tooltip": {
+          "mode": "details"
+        },
+        "basemap": {
+          "type": "xyz",
+          "name": "Blank",
+          "config": {
+            "url": "/public/maps/blank_tile.png",
+            "attribution": ""
+          }
+        },
+        "layers": [
+          {
+            "type": "geojson",
+            "name": "India",
+            "tooltip": false,
+            "config": {
+              "src": "public/maps/india_states.geojson",
+              "style": {
+                "color": {
+                  "fixed": "#a8a6a0"
+                },
+                "opacity": 0.25,
+                "symbol": {
+                  "fixed": "",
+                  "mode": "fixed"
+                },
+                "size": {
+                  "fixed": 1,
+                  "max": 1,
+                  "min": 1
+                }
+              },
+              "showLegend": false
+            }
+          },
+          {
+            "type": "markers",
+            "name": "Stations",
+            "tooltip": true,
+            "location": {
+              "mode": "coords",
+              "latitude": "lat",
+              "longitude": "lon"
+            },
+            "config": {
+              "showLegend": true,
+              "style": {
+                "color": {
+                  "field": "rate",
+                  "fixed": "#2a78d6"
+                },
+                "opacity": 1,
+                "size": {
+                  "fixed": 9,
+                  "max": 9,
+                  "min": 9
+                },
+                "symbol": {
+                  "fixed": "img/icons/marker/circle.svg",
+                  "mode": "fixed"
+                }
+              }
+            }
+          }
+        ]
+      },
+      "fieldConfig": {
+        "defaults": {
+          "color": {
+            "mode": "thresholds"
+          },
+          "decimals": 2,
+          "thresholds": {
+            "mode": "absolute",
+            "steps": [
+              {
+                "color": "#2a78d6",
+                "value": null
+              },
+              {
+                "color": "#d9d7d0",
+                "value": -0.1
+              },
+              {
+                "color": "#efb0a8",
+                "value": 0.1
+              },
+              {
+                "color": "#e07a70",
+                "value": 0.25
+              },
+              {
+                "color": "#d03b3b",
+                "value": 0.4
+              }
+            ]
+          }
+        },
+        "overrides": []
+      },
+      "transformations": [],
+      "targets": [
+        {
+          "datasource": {
+            "type": "grafana-clickhouse-datasource",
+            "uid": "clickhouse"
+          },
+          "editorType": "sql",
+          "format": 1,
+          "queryType": "table",
+          "rawSql": "SELECT name, state, lat, lon, round(mean_rate, 2) AS rate, round(tmax_rate, 2) AS days, round(tmin_rate, 2) AS nights, months, if(suspect = 1, 'Check: day and night rates differ widely', 'OK') AS flag FROM heat.dash_station_rates",
+          "refId": "A"
+        }
+      ]
+    },
+    {
+      "id": 7,
+      "type": "table",
+      "title": "Stations ranked by warming rate",
+      "description": "95% interval widened for month-to-month correlation. Repeats is when the reporting artefact reached the station.",
+      "gridPos": {
+        "x": 14,
+        "y": 7,
+        "w": 10,
+        "h": 20
+      },
+      "datasource": {
+        "type": "grafana-clickhouse-datasource",
+        "uid": "clickhouse"
+      },
+      "options": {
+        "showHeader": true,
+        "cellHeight": "sm"
+      },
+      "fieldConfig": {
+        "defaults": {
+          "custom": {
+            "align": "auto"
+          },
+          "decimals": 2
+        },
+        "overrides": [
+          {
+            "matcher": {
+              "id": "byName",
+              "options": "Station"
+            },
+            "properties": [
+              {
+                "id": "custom.width",
+                "value": 170
+              }
+            ]
+          },
+          {
+            "matcher": {
+              "id": "byName",
+              "options": "State"
+            },
+            "properties": [
+              {
+                "id": "custom.width",
+                "value": 118
+              }
+            ]
+          },
+          {
+            "matcher": {
+              "id": "byName",
+              "options": "Rate"
+            },
+            "properties": [
+              {
+                "id": "custom.width",
+                "value": 62
+              }
+            ]
+          },
+          {
+            "matcher": {
+              "id": "byName",
+              "options": "Low"
+            },
+            "properties": [
+              {
+                "id": "custom.width",
+                "value": 62
+              }
+            ]
+          },
+          {
+            "matcher": {
+              "id": "byName",
+              "options": "High"
+            },
+            "properties": [
+              {
+                "id": "custom.width",
+                "value": 62
+              }
+            ]
+          }
+        ]
+      },
+      "transformations": [],
+      "targets": [
+        {
+          "datasource": {
+            "type": "grafana-clickhouse-datasource",
+            "uid": "clickhouse"
+          },
+          "editorType": "sql",
+          "format": 1,
+          "queryType": "table",
+          "rawSql": "SELECT name AS Station, state AS State, round(mean_rate, 2) AS `Rate`, round(ci_low, 2) AS `Low`, round(ci_high, 2) AS `High`, multiIf(repeat_group = 'jumped', 'Stepped at 2011', repeat_group = 'early', 'Stepped around 1990', repeat_group = 'clean', 'Never affected', '') AS `Repeats` FROM heat.dash_station_rates ORDER BY mean_rate DESC",
+          "refId": "A"
+        }
+      ]
+    },
+    {
+      "id": 8,
+      "type": "timeseries",
+      "title": "Repeated maximums switch on and off by group, while minimums never move",
+      "description": "A natural repeat covers about 4% of days. 22 of the 23 stations that step at 2011 are in the area of IMD's Chennai centre.",
+      "gridPos": {
+        "x": 0,
+        "y": 27,
+        "w": 12,
+        "h": 9
+      },
+      "datasource": {
+        "type": "grafana-clickhouse-datasource",
+        "uid": "clickhouse"
+      },
+      "options": {
+        "legend": {
+          "displayMode": "list",
+          "placement": "bottom",
+          "showLegend": true
+        },
+        "tooltip": {
+          "mode": "multi",
+          "sort": "none"
+        }
+      },
+      "fieldConfig": {
+        "defaults": {
+          "color": {
+            "mode": "fixed",
+            "fixedColor": "#2a78d6"
+          },
+          "custom": {
+            "lineWidth": 2,
+            "fillOpacity": 0,
+            "showPoints": "never",
+            "spanNulls": false,
+            "axisLabel": "%",
+            "axisCenteredZero": false,
+            "drawStyle": "line"
+          }
+        },
+        "overrides": [
+          {
+            "matcher": {
+              "id": "byName",
+              "options": "Stepped at 2011"
+            },
+            "properties": [
+              {
+                "id": "color",
+                "value": {
+                  "mode": "fixed",
+                  "fixedColor": "#eb6834"
+                }
+              }
+            ]
+          },
+          {
+            "matcher": {
+              "id": "byName",
+              "options": "Stepped around 1990"
+            },
+            "properties": [
+              {
+                "id": "color",
+                "value": {
+                  "mode": "fixed",
+                  "fixedColor": "#1baf7a"
+                }
+              }
+            ]
+          },
+          {
+            "matcher": {
+              "id": "byName",
+              "options": "Never affected"
+            },
+            "properties": [
+              {
+                "id": "color",
+                "value": {
+                  "mode": "fixed",
+                  "fixedColor": "#2a78d6"
+                }
+              }
+            ]
+          },
+          {
+            "matcher": {
+              "id": "byName",
+              "options": "Minimums, 2011 group"
+            },
+            "properties": [
+              {
+                "id": "color",
+                "value": {
+                  "mode": "fixed",
+                  "fixedColor": "#a8a6a0"
+                }
+              },
+              {
+                "id": "custom.lineStyle",
+                "value": {
+                  "fill": "dash",
+                  "dash": [
+                    4,
+                    3
+                  ]
+                }
+              }
+            ]
+          }
+        ]
+      },
+      "transformations": [],
+      "targets": [
+        {
+          "datasource": {
+            "type": "grafana-clickhouse-datasource",
+            "uid": "clickhouse"
+          },
+          "editorType": "sql",
+          "format": 0,
+          "queryType": "table",
+          "rawSql": "SELECT toDateTime(makeDate(toUInt16(year), 1, 1)) AS time, avgIf(tmax_share, repeat_group = 'jumped') AS `Stepped at 2011`, avgIf(tmax_share, repeat_group = 'early') AS `Stepped around 1990`, avgIf(tmax_share, repeat_group = 'clean') AS `Never affected`, avgIf(tmin_share, repeat_group = 'jumped') AS `Minimums, 2011 group` FROM heat.dash_repeats WHERE tmax_days >= 500 GROUP BY year ORDER BY year",
+          "refId": "A"
+        }
+      ]
+    },
+    {
+      "id": 9,
+      "type": "barchart",
+      "title": "Q1. Heatwave days per station per hot season",
+      "description": "28 stations, each compared with itself. Removing every repeat over-corrects. Few stations have complete seasons after 2015, so 2020-24 is left out.",
+      "gridPos": {
+        "x": 12,
+        "y": 27,
+        "w": 12,
+        "h": 9
+      },
+      "datasource": {
+        "type": "grafana-clickhouse-datasource",
+        "uid": "clickhouse"
+      },
+      "options": {
+        "xField": "period",
+        "orientation": "auto",
+        "barWidth": 0.7,
+        "groupWidth": 0.7,
+        "showValue": "auto",
+        "stacking": "none",
+        "legend": {
+          "displayMode": "list",
+          "placement": "bottom",
+          "showLegend": true
+        },
+        "tooltip": {
+          "mode": "multi"
+        },
+        "xTickLabelRotation": 0
+      },
+      "fieldConfig": {
+        "defaults": {
+          "decimals": 2,
+          "custom": {
+            "fillOpacity": 90,
+            "lineWidth": 0
+          },
+          "min": 0
+        },
+        "overrides": [
+          {
+            "matcher": {
+              "id": "byName",
+              "options": "As recorded"
+            },
+            "properties": [
+              {
+                "id": "color",
+                "value": {
+                  "mode": "fixed",
+                  "fixedColor": "#a8a6a0"
+                }
+              }
+            ]
+          },
+          {
+            "matcher": {
+              "id": "byName",
+              "options": "Repeats removed"
+            },
+            "properties": [
+              {
+                "id": "color",
+                "value": {
+                  "mode": "fixed",
+                  "fixedColor": "#2a78d6"
+                }
+              }
+            ]
+          }
+        ]
+      },
+      "transformations": [],
+      "targets": [
+        {
+          "datasource": {
+            "type": "grafana-clickhouse-datasource",
+            "uid": "clickhouse"
+          },
+          "editorType": "sql",
+          "format": 1,
+          "queryType": "table",
+          "rawSql": "SELECT period, avg(heatwave_days) AS `As recorded`, avg(heatwave_days_no_repeat) AS `Repeats removed` FROM heat.dash_heat_periods WHERE period != '2020-24' GROUP BY period ORDER BY period = '1982-89' DESC, period",
+          "refId": "A"
+        }
+      ]
+    },
+    {
+      "id": 10,
+      "type": "barchart",
+      "title": "Q2. Days against nights: warming rate at each station, \u00b0C per decade",
+      "description": "1982-2024. Stations are ordered from days furthest ahead to nights furthest ahead.",
+      "gridPos": {
+        "x": 0,
+        "y": 36,
+        "w": 12,
+        "h": 11
+      },
+      "datasource": {
+        "type": "grafana-clickhouse-datasource",
+        "uid": "clickhouse"
+      },
+      "options": {
+        "xField": "name",
+        "orientation": "auto",
+        "barWidth": 0.8,
+        "groupWidth": 0.8,
+        "showValue": "never",
+        "stacking": "none",
+        "legend": {
+          "displayMode": "list",
+          "placement": "bottom",
+          "showLegend": true
+        },
+        "tooltip": {
+          "mode": "multi"
+        },
+        "xTickLabelRotation": -60,
+        "xTickLabelSpacing": 0
+      },
+      "fieldConfig": {
+        "defaults": {
+          "custom": {
+            "fillOpacity": 90,
+            "lineWidth": 0
+          }
+        },
+        "overrides": [
+          {
+            "matcher": {
+              "id": "byName",
+              "options": "Days (maximum)"
+            },
+            "properties": [
+              {
+                "id": "color",
+                "value": {
+                  "mode": "fixed",
+                  "fixedColor": "#2a78d6"
+                }
+              }
+            ]
+          },
+          {
+            "matcher": {
+              "id": "byName",
+              "options": "Nights (minimum)"
+            },
+            "properties": [
+              {
+                "id": "color",
+                "value": {
+                  "mode": "fixed",
+                  "fixedColor": "#eb6834"
+                }
+              }
+            ]
+          }
+        ]
+      },
+      "transformations": [],
+      "targets": [
+        {
+          "datasource": {
+            "type": "grafana-clickhouse-datasource",
+            "uid": "clickhouse"
+          },
+          "editorType": "sql",
+          "format": 1,
+          "queryType": "table",
+          "rawSql": "SELECT name, round(tmax_rate, 2) AS `Days (maximum)`, round(tmin_rate, 2) AS `Nights (minimum)` FROM heat.dash_station_rates ORDER BY tmin_rate - tmax_rate",
+          "refId": "A"
+        }
+      ]
+    },
+    {
+      "id": 11,
+      "type": "timeseries",
+      "title": "Q3. First 40\u00b0C of the year, days from each station's usual date",
+      "description": "Negative is earlier. The year-to-year swing dwarfs any drift.",
+      "gridPos": {
+        "x": 12,
+        "y": 36,
+        "w": 12,
+        "h": 11
+      },
+      "datasource": {
+        "type": "grafana-clickhouse-datasource",
+        "uid": "clickhouse"
+      },
+      "options": {
+        "legend": {
+          "displayMode": "list",
+          "placement": "bottom",
+          "showLegend": false
+        },
+        "tooltip": {
+          "mode": "multi",
+          "sort": "none"
+        }
+      },
+      "fieldConfig": {
+        "defaults": {
+          "color": {
+            "mode": "fixed",
+            "fixedColor": "#2a78d6"
+          },
+          "custom": {
+            "lineWidth": 2,
+            "fillOpacity": 0,
+            "showPoints": "never",
+            "spanNulls": false,
+            "axisLabel": "days",
+            "axisCenteredZero": false,
+            "drawStyle": "line"
+          }
+        },
+        "overrides": []
+      },
+      "transformations": [],
+      "targets": [
+        {
+          "datasource": {
+            "type": "grafana-clickhouse-datasource",
+            "uid": "clickhouse"
+          },
+          "editorType": "sql",
+          "format": 0,
+          "queryType": "table",
+          "rawSql": "SELECT toDateTime(makeDate(toUInt16(year), 1, 1)) AS time, if(stations >= 5, median_shift, NULL) AS `Median across stations (days)` FROM heat.dash_first_40c ORDER BY year",
+          "refId": "A"
+        }
+      ]
+    },
+    {
+      "id": 12,
+      "type": "barchart",
+      "title": "Q4. Rainy days per season, 1901-1970",
+      "description": "Station average at rain gauges with at least 56 of 70 complete seasons.",
+      "gridPos": {
+        "x": 0,
+        "y": 47,
+        "w": 8,
+        "h": 9
+      },
+      "datasource": {
+        "type": "grafana-clickhouse-datasource",
+        "uid": "clickhouse"
+      },
+      "options": {
+        "xField": "decade",
+        "orientation": "auto",
+        "barWidth": 0.7,
+        "groupWidth": 0.7,
+        "showValue": "always",
+        "stacking": "none",
+        "legend": {
+          "displayMode": "list",
+          "placement": "bottom",
+          "showLegend": false
+        },
+        "tooltip": {
+          "mode": "single"
+        },
+        "xTickLabelRotation": 0,
+        "xTickLabelSpacing": 0
+      },
+      "fieldConfig": {
+        "defaults": {
+          "color": {
+            "mode": "fixed",
+            "fixedColor": "#2a78d6"
+          },
+          "unit": "",
+          "custom": {
+            "axisLabel": "",
+            "fillOpacity": 90,
+            "lineWidth": 0,
+            "gradientMode": "none"
+          },
+          "decimals": 1,
+          "min": 0
+        },
+        "overrides": []
+      },
+      "transformations": [],
+      "targets": [
+        {
+          "datasource": {
+            "type": "grafana-clickhouse-datasource",
+            "uid": "clickhouse"
+          },
+          "editorType": "sql",
+          "format": 1,
+          "queryType": "table",
+          "rawSql": "SELECT concat(toString(decade_start), '-', leftPad(toString((decade_start + 9) % 100), 2, '0')) AS decade, round(rainy_days, 1) AS `Rainy days` FROM heat.dash_gauge_decades ORDER BY decade_start",
+          "refId": "A"
+        }
+      ]
+    },
+    {
+      "id": 13,
+      "type": "barchart",
+      "title": "Heavy days (100 mm or more) per season",
+      "description": "Shown apart from rainy days because the scales differ.",
+      "gridPos": {
+        "x": 8,
+        "y": 47,
+        "w": 8,
+        "h": 9
+      },
+      "datasource": {
+        "type": "grafana-clickhouse-datasource",
+        "uid": "clickhouse"
+      },
+      "options": {
+        "xField": "decade",
+        "orientation": "auto",
+        "barWidth": 0.7,
+        "groupWidth": 0.7,
+        "showValue": "always",
+        "stacking": "none",
+        "legend": {
+          "displayMode": "list",
+          "placement": "bottom",
+          "showLegend": false
+        },
+        "tooltip": {
+          "mode": "single"
+        },
+        "xTickLabelRotation": 0,
+        "xTickLabelSpacing": 0
+      },
+      "fieldConfig": {
+        "defaults": {
+          "color": {
+            "mode": "fixed",
+            "fixedColor": "#eb6834"
+          },
+          "unit": "",
+          "custom": {
+            "axisLabel": "",
+            "fillOpacity": 90,
+            "lineWidth": 0,
+            "gradientMode": "none"
+          },
+          "decimals": 2,
+          "min": 0
+        },
+        "overrides": []
+      },
+      "transformations": [],
+      "targets": [
+        {
+          "datasource": {
+            "type": "grafana-clickhouse-datasource",
+            "uid": "clickhouse"
+          },
+          "editorType": "sql",
+          "format": 1,
+          "queryType": "table",
+          "rawSql": "SELECT concat(toString(decade_start), '-', leftPad(toString((decade_start + 9) % 100), 2, '0')) AS decade, round(heavy_days, 2) AS `Heavy days` FROM heat.dash_gauge_decades ORDER BY decade_start",
+          "refId": "A"
+        }
+      ]
+    },
+    {
+      "id": 14,
+      "type": "barchart",
+      "title": "Why rain after 1972 is set aside",
+      "description": "The same 70 stations by era. A monsoon cannot fall this far and recover, so this is a change in reporting.",
+      "gridPos": {
+        "x": 16,
+        "y": 47,
+        "w": 8,
+        "h": 9
+      },
+      "datasource": {
+        "type": "grafana-clickhouse-datasource",
+        "uid": "clickhouse"
+      },
+      "options": {
+        "xField": "Era",
+        "orientation": "auto",
+        "barWidth": 0.7,
+        "groupWidth": 0.7,
+        "showValue": "always",
+        "stacking": "none",
+        "legend": {
+          "displayMode": "list",
+          "placement": "bottom",
+          "showLegend": false
+        },
+        "tooltip": {
+          "mode": "single"
+        },
+        "xTickLabelRotation": 0,
+        "xTickLabelSpacing": 0
+      },
+      "fieldConfig": {
+        "defaults": {
+          "color": {
+            "mode": "fixed",
+            "fixedColor": "#a8a6a0"
+          },
+          "unit": "",
+          "custom": {
+            "axisLabel": "",
+            "fillOpacity": 90,
+            "lineWidth": 0,
+            "gradientMode": "none"
+          },
+          "min": 0
+        },
+        "overrides": []
+      },
+      "transformations": [],
+      "targets": [
+        {
+          "datasource": {
+            "type": "grafana-clickhouse-datasource",
+            "uid": "clickhouse"
+          },
+          "editorType": "sql",
+          "format": 1,
+          "queryType": "table",
+          "rawSql": "SELECT era AS Era, round(season_mm) AS `June-September mm as reported` FROM heat.dash_water_balance",
+          "refId": "A"
+        }
+      ]
+    },
+    {
+      "id": 15,
+      "type": "barchart",
+      "title": "Q6. Countries by median warming rate, 1982-2021",
+      "description": "Countries with at least 5 qualifying stations. The same rule applies to every country.",
+      "gridPos": {
+        "x": 0,
+        "y": 56,
+        "w": 12,
+        "h": 20
+      },
+      "datasource": {
+        "type": "grafana-clickhouse-datasource",
+        "uid": "clickhouse"
+      },
+      "options": {
+        "xField": "Country",
+        "orientation": "horizontal",
+        "barWidth": 0.7,
+        "groupWidth": 0.7,
+        "showValue": "always",
+        "stacking": "none",
+        "legend": {
+          "displayMode": "list",
+          "placement": "bottom",
+          "showLegend": false
+        },
+        "tooltip": {
+          "mode": "single"
+        },
+        "xTickLabelRotation": 0,
+        "xTickLabelSpacing": 0,
+        "colorByField": "is_india"
+      },
+      "fieldConfig": {
+        "defaults": {
+          "color": {
+            "mode": "thresholds"
+          },
+          "unit": "",
+          "custom": {
+            "axisLabel": "",
+            "fillOpacity": 90,
+            "lineWidth": 0,
+            "gradientMode": "none"
+          },
+          "decimals": 2,
+          "thresholds": {
+            "mode": "absolute",
+            "steps": [
+              {
+                "color": "#a8a6a0",
+                "value": null
+              },
+              {
+                "color": "#eb6834",
+                "value": 1
+              }
+            ]
+          }
+        },
+        "overrides": [
+          {
+            "matcher": {
+              "id": "byName",
+              "options": "is_india"
+            },
+            "properties": [
+              {
+                "id": "custom.hideFrom",
+                "value": {
+                  "legend": true,
+                  "tooltip": true,
+                  "viz": true
+                }
+              }
+            ]
+          }
+        ]
+      },
+      "transformations": [],
+      "targets": [
+        {
+          "datasource": {
+            "type": "grafana-clickhouse-datasource",
+            "uid": "clickhouse"
+          },
+          "editorType": "sql",
+          "format": 1,
+          "queryType": "table",
+          "rawSql": "SELECT name AS Country, round(median_rate, 2) AS `\u00b0C per decade`, if(country = 'IN', 1, 0) AS is_india FROM heat.dash_countries ORDER BY median_rate DESC",
+          "refId": "A"
+        }
+      ]
+    },
+    {
+      "id": 16,
+      "type": "table",
+      "title": "Benchmark: median seconds on warm runs, 4 threads, 3 GB",
+      "description": "Same limits on every engine. A blank means the query has no version for that engine.",
+      "gridPos": {
+        "x": 12,
+        "y": 56,
+        "w": 12,
+        "h": 8
+      },
+      "datasource": {
+        "type": "grafana-clickhouse-datasource",
+        "uid": "clickhouse"
+      },
+      "options": {
+        "showHeader": true,
+        "cellHeight": "sm"
+      },
+      "fieldConfig": {
+        "defaults": {
+          "decimals": 2
+        },
+        "overrides": [
+          {
+            "matcher": {
+              "id": "byName",
+              "options": "Question"
+            },
+            "properties": [
+              {
+                "id": "custom.width",
+                "value": 340
+              }
+            ]
+          },
+          {
+            "matcher": {
+              "id": "byName",
+              "options": "ClickHouse raw"
+            },
+            "properties": [
+              {
+                "id": "custom.width",
+                "value": 125
+              }
+            ]
+          },
+          {
+            "matcher": {
+              "id": "byName",
+              "options": "ClickHouse rollup"
+            },
+            "properties": [
+              {
+                "id": "custom.width",
+                "value": 135
+              }
+            ]
+          }
+        ]
+      },
+      "transformations": [],
+      "targets": [
+        {
+          "datasource": {
+            "type": "grafana-clickhouse-datasource",
+            "uid": "clickhouse"
+          },
+          "editorType": "sql",
+          "format": 1,
+          "queryType": "table",
+          "rawSql": "SELECT question AS Question, nullIf(maxIf(seconds, engine = 'clickhouse_raw'), 0) AS `ClickHouse raw`, nullIf(maxIf(seconds, engine = 'clickhouse_rollup'), 0) AS `ClickHouse rollup`, nullIf(maxIf(seconds, engine = 'duckdb_parquet'), 0) AS `DuckDB Parquet` FROM heat.dash_benchmark WHERE run = 'median_warm' GROUP BY question ORDER BY question",
+          "refId": "A"
+        }
+      ]
+    },
+    {
+      "id": 17,
+      "type": "table",
+      "title": "Does the result depend on the choices made?",
+      "description": "Change in heatwave days from 1982-89 to the 2010s under each assumption.",
+      "gridPos": {
+        "x": 12,
+        "y": 64,
+        "w": 12,
+        "h": 12
+      },
+      "datasource": {
+        "type": "grafana-clickhouse-datasource",
+        "uid": "clickhouse"
+      },
+      "options": {
+        "showHeader": true,
+        "cellHeight": "sm"
+      },
+      "fieldConfig": {
+        "defaults": {
+          "custom": {
+            "align": "auto"
+          }
+        },
+        "overrides": [
+          {
+            "matcher": {
+              "id": "byName",
+              "options": "Scenario"
+            },
+            "properties": [
+              {
+                "id": "custom.width",
+                "value": 440
+              }
+            ]
+          },
+          {
+            "matcher": {
+              "id": "byName",
+              "options": "Stations"
+            },
+            "properties": [
+              {
+                "id": "custom.width",
+                "value": 70
+              }
+            ]
+          },
+          {
+            "matcher": {
+              "id": "byName",
+              "options": "Recorded %"
+            },
+            "properties": [
+              {
+                "id": "custom.width",
+                "value": 105
+              }
+            ]
+          }
+        ]
+      },
+      "transformations": [],
+      "targets": [
+        {
+          "datasource": {
+            "type": "grafana-clickhouse-datasource",
+            "uid": "clickhouse"
+          },
+          "editorType": "sql",
+          "format": 1,
+          "queryType": "table",
+          "rawSql": "SELECT scenario AS Scenario, stations AS Stations, change_recorded_pct AS `Recorded %`, change_no_repeat_pct AS `Repeats removed %` FROM heat.dash_sensitivity",
+          "refId": "A"
+        }
+      ]
+    },
+    {
+      "id": 18,
+      "type": "timeseries",
+      "title": "Station coverage: Indian stations reporting each year",
+      "description": "Rain falls from over 2,400 stations to under 100 in the early 1970s. Temperature effectively starts in 1973.",
+      "gridPos": {
+        "x": 0,
+        "y": 76,
+        "w": 12,
+        "h": 15
+      },
+      "datasource": {
+        "type": "grafana-clickhouse-datasource",
+        "uid": "clickhouse"
+      },
+      "options": {
+        "legend": {
+          "displayMode": "list",
+          "placement": "bottom",
+          "showLegend": true
+        },
+        "tooltip": {
+          "mode": "multi",
+          "sort": "none"
+        }
+      },
+      "fieldConfig": {
+        "defaults": {
+          "color": {
+            "mode": "fixed",
+            "fixedColor": "#2a78d6"
+          },
+          "custom": {
+            "lineWidth": 2,
+            "fillOpacity": 0,
+            "showPoints": "never",
+            "spanNulls": false,
+            "axisLabel": "",
+            "axisCenteredZero": false,
+            "drawStyle": "line"
+          }
+        },
+        "overrides": [
+          {
+            "matcher": {
+              "id": "byName",
+              "options": "Reporting rain"
+            },
+            "properties": [
+              {
+                "id": "color",
+                "value": {
+                  "mode": "fixed",
+                  "fixedColor": "#2a78d6"
+                }
+              }
+            ]
+          },
+          {
+            "matcher": {
+              "id": "byName",
+              "options": "Reporting maximum temperature"
+            },
+            "properties": [
+              {
+                "id": "color",
+                "value": {
+                  "mode": "fixed",
+                  "fixedColor": "#eb6834"
+                }
+              }
+            ]
+          }
+        ]
+      },
+      "transformations": [],
+      "targets": [
+        {
+          "datasource": {
+            "type": "grafana-clickhouse-datasource",
+            "uid": "clickhouse"
+          },
+          "editorType": "sql",
+          "format": 0,
+          "queryType": "table",
+          "rawSql": "SELECT toDateTime(makeDate(toUInt16(year), 1, 1)) AS time, stations_rain AS `Reporting rain`, stations_tmax AS `Reporting maximum temperature` FROM heat.dash_coverage WHERE year >= 1970 ORDER BY year",
+          "refId": "A"
+        }
+      ]
+    },
+    {
+      "id": 19,
+      "type": "table",
+      "title": "Data-quality log: checks by severity",
+      "description": "Every check is listed, including those that passed. The full per-station log is docs/issue_log.csv.",
+      "gridPos": {
+        "x": 12,
+        "y": 76,
+        "w": 12,
+        "h": 15
+      },
+      "datasource": {
+        "type": "grafana-clickhouse-datasource",
+        "uid": "clickhouse"
+      },
+      "options": {
+        "showHeader": true,
+        "cellHeight": "sm"
+      },
+      "fieldConfig": {
+        "defaults": {
+          "custom": {
+            "align": "auto"
+          }
+        },
+        "overrides": [
+          {
+            "matcher": {
+              "id": "byName",
+              "options": "Severity"
+            },
+            "properties": [
+              {
+                "id": "mappings",
+                "value": [
+                  {
+                    "type": "value",
+                    "options": {
+                      "high": {
+                        "color": "#d03b3b",
+                        "index": 0,
+                        "text": "High"
+                      },
+                      "medium": {
+                        "color": "#ec835a",
+                        "index": 1,
+                        "text": "Medium"
+                      },
+                      "low": {
+                        "color": "#898781",
+                        "index": 2,
+                        "text": "Low"
+                      },
+                      "info": {
+                        "color": "#898781",
+                        "index": 3,
+                        "text": "Info"
+                      }
+                    }
+                  }
+                ]
+              },
+              {
+                "id": "custom.cellOptions",
+                "value": {
+                  "type": "color-text"
+                }
+              },
+              {
+                "id": "custom.width",
+                "value": 90
+              }
+            ]
+          },
+          {
+            "matcher": {
+              "id": "byName",
+              "options": "Check"
+            },
+            "properties": [
+              {
+                "id": "custom.width",
+                "value": 70
+              }
+            ]
+          },
+          {
+            "matcher": {
+              "id": "byName",
+              "options": "Rows"
+            },
+            "properties": [
+              {
+                "id": "custom.width",
+                "value": 60
+              }
+            ]
+          },
+          {
+            "matcher": {
+              "id": "byName",
+              "options": "Count"
+            },
+            "properties": [
+              {
+                "id": "custom.width",
+                "value": 100
+              }
+            ]
+          }
+        ]
+      },
+      "transformations": [],
+      "targets": [
+        {
+          "datasource": {
+            "type": "grafana-clickhouse-datasource",
+            "uid": "clickhouse"
+          },
+          "editorType": "sql",
+          "format": 1,
+          "queryType": "table",
+          "rawSql": "SELECT check AS Check, severity AS Severity, count() AS Rows, sum(count) AS Count, any(description) AS `What was checked` FROM heat.dash_issue_log GROUP BY check, severity ORDER BY check",
+          "refId": "A"
+        }
+      ]
+    }
+  ]
+}

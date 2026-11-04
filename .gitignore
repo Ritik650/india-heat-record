@@ -1,0 +1,9 @@
+.venv/
+__pycache__/
+*.pyc
+data/raw/
+data/tmp/
+private/
+site/*.pdf
+site/card.png
+.pytest_cache/

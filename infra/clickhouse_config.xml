@@ -1,0 +1,30 @@
+<!-- Laptop settings: loopback only, hard memory cap, small caches, and only the query log.
+     The cap is deliberately low. On a 16 GB machine shared with an IDE and a browser, letting ClickHouse
+     use the WSL default of 8 GB hung the VM and pushed the Windows page file onto a nearly full disk. -->
+<clickhouse>
+    <logger>
+        <level>warning</level>
+        <console>false</console>
+        <log>log/server.log</log>
+        <errorlog>log/error.log</errorlog>
+        <size>50M</size>
+        <count>2</count>
+    </logger>
+    <listen_host>127.0.0.1</listen_host>
+    <http_port>8123</http_port>
+    <tcp_port>9000</tcp_port>
+    <path>data/</path>
+    <tmp_path>tmp/</tmp_path>
+    <user_files_path>user_files/</user_files_path>
+    <format_schema_path>format_schemas/</format_schema_path>
+    <max_server_memory_usage>3500000000</max_server_memory_usage>
+    <mark_cache_size>268435456</mark_cache_size>
+    <uncompressed_cache_size>0</uncompressed_cache_size>
+    <users_config>users.xml</users_config>
+    <query_log>
+        <database>system</database>
+        <table>query_log</table>
+        <engine>ENGINE = MergeTree PARTITION BY toYYYYMM(event_date) ORDER BY (event_date, event_time) TTL event_date + INTERVAL 30 DAY</engine>
+        <flush_interval_milliseconds>2000</flush_interval_milliseconds>
+    </query_log>
+</clickhouse>
